@@ -1,5 +1,7 @@
 const path = require('path');
-const PugPlugin = require('pug-plugin');
+const buildDevServer = require('./config/build/buildDevServer');
+const buildLoaders = require('./config/build/buildLoaders');
+const buildPlugins = require('./config/build/buildPlugins');
 
 module.exports = {
   output: {
@@ -13,42 +15,13 @@ module.exports = {
     // 'pages/about': './src/about/index.pug',
   },
 
-  plugins: [
-    new PugPlugin({
-      pretty: false, // formatting HTML, useful for development mode
-      js: {
-        filename: 'assets/js/[name].[contenthash:8].js',
-      },
-      css: {
-        filename: 'assets/css/[name].[contenthash:8].css',
-      },
-    }),
-  ],
+  plugins: buildPlugins(),
 
   module: {
-    rules: [
-      {
-        test: /\.pug$/,
-        loader: PugPlugin.loader,
-      },
-      {
-        test: /\.(css|sass|scss)$/,
-        use: ['css-loader', 'sass-loader'],
-      },
-    ],
+    rules: buildLoaders(),
   },
 
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-    compress: true,
-    open: true,
-    watchFiles: {
-      paths: ['src/**/*.*'],
-      options: {
-        usePolling: true,
-      },
-    },
-  },
+  devServer: buildDevServer({
+    port: 8080
+  }),
 };
