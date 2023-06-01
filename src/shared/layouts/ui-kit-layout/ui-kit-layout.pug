@@ -1,0 +1,38 @@
+//- Local variables
+- const fullYear = (new Date).getFullYear();
+
+//- External variables
+block variables
+
+doctype html
+html(lang='en')
+  head
+    //- Meta
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1')
+    meta(property='description' content='Hello world')
+
+    //- Favicons
+    link(rel='icon' href=require('./assets/img/favicon.svg') type='image/svg+xml' sizes='any')
+
+    //- Page title
+    title= title
+
+    //- Page styles
+    block style
+      //- common used styles
+    link(rel='stylesheet' href=require('@/app/styles/reset.scss'))
+    link(rel='stylesheet' href=require('./ui-kit-layout.scss'))
+
+    block head
+      //- script(src=require('./main.js') defer)
+
+  body
+    .page
+      .page__header
+        img.logo(src=require('./assets/img/favicon.svg'))
+
+      main.page__content
+        block content
+
+    block script

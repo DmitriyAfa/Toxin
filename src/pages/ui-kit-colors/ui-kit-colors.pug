@@ -1,9 +1,12 @@
-extends @/shared/layouts/ui-kit-layout/index
-include @/shared/ui/card/index
+extends @/shared/layouts/ui-kit-layout/ui-kit-layout
+include @/shared/ui/card/card
 
 //- set variables used in layout
 block variables
   - const title = 'Colors and types'
+
+block style
+  link(rel='stylesheet' href=require('@/shared/ui/card/card.scss'))
 
 block content
   section
