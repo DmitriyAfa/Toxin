@@ -1,0 +1,13 @@
+extends @/shared/layouts/ui-kit-layout/index
+include @/shared/ui/card/index
+
+//- set variables used in layout
+block variables
+  - const title = 'Colors and types'
+
+block content
+  section
+    .container.flex-column.center-x
+      +card()
+      h1 About
+      .teaser The pug-plugin makes using Pug very easy. Please see details on <a href="https://github.com/webdiscus/pug-plugin/" class="link">GitHub</a>.

@@ -1,0 +1,11 @@
+mixin card(props = {})
+  -
+    const {
+      border="round"
+    } = props
+
+  -
+    const borderClass = border === "round" ? "card_round" : ""
+    const classes = [borderClass]
+
+  .card(class=classes) card

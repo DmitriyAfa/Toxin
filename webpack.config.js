@@ -2,6 +2,21 @@ const path = require('path');
 const buildDevServer = require('./config/build/buildDevServer');
 const buildLoaders = require('./config/build/buildLoaders');
 const buildPlugins = require('./config/build/buildPlugins');
+const buildResolvers = require('./config/build/buildResolvers');
+
+const paths = {
+  entry: {
+    index: './src/pages/ui-kit/colors-and-types/ui/colors-and-types.pug'
+  },
+  src: path.join(__dirname, 'src'),
+  alias: {
+    '@/pages': path.join(__dirname, 'src/pages/'),
+    '@/widgets': path.join(__dirname, 'src/widgets/'),
+    '@/features': path.join(__dirname, 'src/features/'),
+    '@/entities': path.join(__dirname, 'src/entities/'),
+    '@/shared': path.join(__dirname, 'src/shared/'),
+  }
+};
 
 module.exports = {
   output: {
@@ -9,10 +24,12 @@ module.exports = {
     publicPath: '/',
   },
 
+  resolve: buildResolvers({
+    paths,
+  }),
+
   entry: {
-    // define Pug files here
-    index: './src/index.pug', // => dist/index.html
-    // 'pages/about': './src/about/index.pug',
+    index: './src/pages/ui-kit/colors-and-types/ui/colors-and-types.pug',
   },
 
   plugins: buildPlugins(),
@@ -24,4 +41,5 @@ module.exports = {
   devServer: buildDevServer({
     port: 8080
   }),
+
 };
