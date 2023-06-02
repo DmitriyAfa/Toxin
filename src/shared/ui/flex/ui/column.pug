@@ -1,0 +1,8 @@
+include ./flex
+
+mixin column(props)
+  +flex({
+    direction: "column",
+    ...props
+  })
+    block

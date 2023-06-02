@@ -1,0 +1,39 @@
+mixin flex(props = {})
+  -
+    const {
+      justify="start",
+      align="start",
+      direction="row",
+      gap=undefined,
+    } = props
+
+  -
+    const justifyClass = justify === "start" 
+      ? "flex_justify_start"
+      : justify === "center"
+      ? "flex_justify_center"
+      : justify === "end"
+      ? "flex_justify_end"
+      : justify === "between"
+      ? "flex_justify_between" : ""
+
+    const alignClass = align === "start" 
+      ? "flex_align_start"
+      : align === "center"
+      ? "flex_align_center"
+      : align === "end"
+      ? "flex_align_end" : ""
+
+    const directionClass = direction === "row" ? "flex_direction_row" : "flex_direction_column"
+
+    const gapClass = gap === "20" 
+    ? "flex_gap_20"
+    : gap === "40"
+    ? "flex_gap_40"
+    : gap === "50"
+    ? "flex_gap_50" : ""
+
+    const classes = [justifyClass, alignClass, directionClass, gapClass]
+
+  .flex(class=classes)
+    block
