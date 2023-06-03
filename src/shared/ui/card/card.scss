@@ -1,10 +1,51 @@
 .card {
-  background-color: black;
-  width: 75px;
-  height: 75px;
+
+  &_square {
+    width: 70px;
+    height: 70px;
+  }
 
   &_round {
-    border-radius: 4px;
+    &_smallest {
+      border-radius: var(--radius-smallest)
+    }
 
+    &_small {
+      border-radius: var(--radius-small)
+    }
+
+    &_middle {
+      border-radius: var(--radius-medium)
+    }
+  }
+
+  &_theme {
+    &_darkest-gray {
+      background: var(--primary-text-color);
+    }
+
+    &_dark-gray {
+      background: var(--text-color-75);
+    }
+
+    &_gray {
+      background: var(--text-color_50);
+    }
+
+    &_light-gray {
+      background: var(--text-color_25);
+    }
+
+    &_lightest-gray {
+      background: var(--text-color_5);
+    }
+
+    &_primary {
+      background: var(--primary-color);
+    }
+
+    &_secondary {
+      background: var(--secondary-color);
+    }
   }
 }

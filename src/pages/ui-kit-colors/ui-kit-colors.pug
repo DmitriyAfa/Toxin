@@ -1,19 +1,15 @@
 extends @/shared/layouts/ui-kit-layout/ui-kit-layout
-include @/shared/ui/card/card
-include @/shared/ui/flex/index
+include @/entities/color/index
 
-//- set variables used in layout
 block variables
   - const title = 'Colors and types'
 
 block style
-  link(rel='stylesheet' href=require('@/shared/ui/card/card.scss')) 
+  link(rel='stylesheet' href=require('@/app/styles/index.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/flex/flex.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/card/card.scss')) 
+  link(rel='stylesheet' href=require('@/shared/ui/text/text.scss')) 
 
 block content
   section
-    +row({
-      justify: "center",
-      align: "center"
-      })
-      +card()
+    +colors-list()

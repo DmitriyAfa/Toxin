@@ -1,7 +1,15 @@
 :root {
-  --font-family-main: consolas, "Times New Roman", serif;
-
   --radius-smallest: 4px;
   --radius-small: 6px;
-  --radius-small: 6px;
+  --radius-medium: 10px;
+
+  --bg-color: #fff;
+  --ui-kit-bg-color: #e5e5e5;
+  --primary-text-color: #1f2041;
+  --text-color-75: rgba(31, 32, 65, 0.75);
+  --text-color_50: rgba(31, 32, 65, 0.5);
+  --text-color_25: rgba(31, 32, 65, 0.25);
+  --text-color_5: rgba(31, 32, 65, 0.05);
+  --primary-color: #bc9cff;
+  --secondary-color: #6fcf97;
 }

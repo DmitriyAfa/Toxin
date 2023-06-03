@@ -1,0 +1,28 @@
+mixin text(props = {})
+  -
+    const {
+      h1="",
+      h2="",
+      h3="",
+      text="",
+      headWeight="bold",
+      transform="",
+    } = props
+
+    const headWeights = ["normal"]
+    const transforms = ["uppercase", "capitalize"]
+
+  -
+    const headWeightClass = headWeights.includes(headWeight) && `text_weight_${headWeight}`;
+    const transformClass = transforms.includes(transform) && `text_transform_${transform}`;
+
+    const headClasses = [headWeightClass, transformClass]
+
+  if h1 !== ""
+    h1(class=headClasses).text= h1
+  if h2 !== ""
+    h2(class=headClasses).text= h2
+  if h3 !== ""
+    h3(class=headClasses).text= h3
+  if text !== ""
+    p.text= text

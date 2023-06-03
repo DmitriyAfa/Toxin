@@ -1,0 +1,31 @@
+include @/shared/ui/flex/index
+include @/shared/ui/card/index
+include @/shared/ui/text/index
+
+mixin color-card(props = {})
+  -
+    const {
+      theme="darkest-gray",
+      colorName="dark shade 100%",
+      colorHash='#1f2041',
+    } = props
+
+  +row({
+    gap: '40',
+    align: 'center',
+  })
+    +card({
+      border: "round_small",
+      theme: theme,
+      isSquare: true,
+    })
+    +column()
+      +text({
+        h2: colorName,
+        transform: "capitalize",
+      })
+      +text({
+        h2: colorHash,
+        headWeight: "normal",
+        transform: "uppercase",
+      })

@@ -1,0 +1,31 @@
+include ../color-card/color-card
+
+mixin colors-list(props = {})
+  +column({gap: '20'})
+    +color-card()
+    +color-card({
+      theme: "dark-gray",
+      colorName: "dark shade 75%"
+    })
+    +color-card({
+      theme: "gray",
+      colorName: "dark shade 50%"
+    })
+    +color-card({
+      theme: "light-gray",
+      colorName: "dark shade 25%"
+    })
+    +color-card({
+      theme: "lightest-gray",
+      colorName: "dark shade 5%"
+    })
+    +color-card({
+      theme: "primary",
+      colorName: "purple",
+      colorHash: "#bc9cff"
+    })
+    +color-card({
+      theme: "secondary",
+      colorName: "green",
+      colorHash: "#6fcf97"
+    })
