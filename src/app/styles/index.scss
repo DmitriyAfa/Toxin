@@ -1,0 +1,9 @@
+@import './reset.scss';
+@import './variables.scss';
+@import '../assets/fonts/fonts.scss';
+
+html {
+  font: 400 14px Montserrat, Areal, sans-serif;
+  background: var(--bg-color);
+  color: var(--primary-text-color);
+}
