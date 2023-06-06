@@ -1,0 +1,29 @@
+mixin text-field(props = {})
+  -
+    const {
+      type="text",
+      isFocused=false,
+      placeholder="Email",
+      value="This is pretty awesome",
+      variant="",
+      size="biggest",
+    } = props
+
+    const inputSizes = ["biggest", "big"]
+
+    const inputSizeClass = inputSizes.includes(size) && `text-field__input_size_${size}`
+
+    const focusedClass = isFocused ? "text-field_focused" : ""
+    const inputAttributes = {
+      class: [
+        "text-field__input",
+        inputSizeClass,
+      ],
+      type: type,
+      placeholder: placeholder
+    }
+
+  .text-field(class=focusedClass)
+    input&attributes(inputAttributes)
+    if variant === "subscribtion"
+      +button()

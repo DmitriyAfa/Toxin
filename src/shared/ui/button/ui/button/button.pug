@@ -1,0 +1,19 @@
+mixin button(props={})
+  -
+    const {
+      variant="",
+      name="",
+    } = props
+
+    const isArrowRightVariant = variant === "arrowRight"
+
+  button&attributes({
+    class: [
+      "button",
+      'button_variant_arrow-right',
+      'button_size_smallest',
+    ],
+    type: "submit",
+    name: "subscribe",
+  })
+

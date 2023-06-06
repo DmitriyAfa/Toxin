@@ -1,15 +1,31 @@
 :root {
+  // radius
   --radius-smallest: 4px;
   --radius-small: 6px;
   --radius-medium: 10px;
 
+  // colors
   --bg-color: #fff;
   --ui-kit-bg-color: #e5e5e5;
-  --primary-text-color: #1f2041;
+  --text-color: #1f2041;
   --text-color-75: rgba(31, 32, 65, 0.75);
-  --text-color_50: rgba(31, 32, 65, 0.5);
-  --text-color_25: rgba(31, 32, 65, 0.25);
-  --text-color_5: rgba(31, 32, 65, 0.05);
+  --text-color-50: rgba(31, 32, 65, 0.5);
+  --text-color-25: rgba(31, 32, 65, 0.25);
+  --text-color-5: rgba(31, 32, 65, 0.05);
   --primary-color: #bc9cff;
   --secondary-color: #6fcf97;
+
+  // input
+  --form-border: 1px solid var(--text-color-25);
+  --form-border-focused: 1px solid var(--text-color-50);
+
+  --form-width-biggest: 320px;
+  --form-width-big: 276px;
+  --form-height: 44px;
+
+  --form-padding: 13px 15px;
+
+  // button
+  --button-width-smallest: 44px;
+
 }

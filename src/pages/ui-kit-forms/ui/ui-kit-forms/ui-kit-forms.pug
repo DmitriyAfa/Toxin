@@ -1,0 +1,23 @@
+extends @/shared/layouts/ui-kit-layout/ui-kit-layout
+include @/shared/ui/flex/index
+include @/shared/ui/text-field/index
+include @/shared/ui/button/index
+
+block variables
+  - const title = 'Form elements'
+
+block style
+  link(rel='stylesheet' href=require('@/app/styles/index.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/flex/flex.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/text-field/text-field.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
+
+block content
+  +column({
+    justify: "center",
+    align: "center",
+  })
+    +text-field({
+      placeholder: "Email",
+      variant: 'subscribtion',
+    })

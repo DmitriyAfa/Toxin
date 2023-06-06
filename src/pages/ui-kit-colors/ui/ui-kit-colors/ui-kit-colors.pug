@@ -1,5 +1,10 @@
 extends @/shared/layouts/ui-kit-layout/ui-kit-layout
-include @/entities/color/index
+include @/shared/ui/flex/index
+include @/shared/ui/card/index
+include @/shared/ui/text/index
+include ../colors-list/colors-list
+include ../types-list/types-list
+
 
 block variables
   - const title = 'Colors and types'
@@ -11,5 +16,8 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss')) 
 
 block content
-  section
+  +row({
+    justify: "around"
+  }) 
     +colors-list()
+    +types-list()

@@ -14,6 +14,11 @@ h3.text {
   text-transform: uppercase;
 }
 
+p.text {
+  line-height: 24px;
+}
+
+.text,
 h1.text,
 h2.text,
 h3.text {
@@ -30,6 +35,48 @@ h3.text {
 
     &_capitalize {
       text-transform: capitalize;
+    }
+  }
+
+  &_color {
+    &_darkest-gray {
+      color: var(--text-color);
+    }
+
+    &_dark-gray {
+      color: var(--text-color-75);
+    }
+
+    &_gray {
+      color: var(--text-color-50);
+    }
+
+    &_light-gray {
+      color: var(--text-color-25);
+    }
+
+    &_lightest-gray {
+      color: var(--text-color-5);
+    }
+
+    &_primary {
+      color: var(--primary-color);
+    }
+
+    &_secondary {
+      color: var(--secondary-color);
+    }
+  }
+
+  &_min-width {
+    &_50 {
+      min-width: 50px;
+    }
+  }
+
+  &_align {
+    &_end {
+      text-align: end;
     }
   }
 }
