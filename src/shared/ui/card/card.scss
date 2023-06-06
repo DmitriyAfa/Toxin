@@ -21,7 +21,7 @@
 
   &_theme {
     &_darkest-gray {
-      background: var(--primary-text-color);
+      background: var(--text-color);
     }
 
     &_dark-gray {
@@ -29,15 +29,15 @@
     }
 
     &_gray {
-      background: var(--text-color_50);
+      background: var(--text-color-50);
     }
 
     &_light-gray {
-      background: var(--text-color_25);
+      background: var(--text-color-25);
     }
 
     &_lightest-gray {
-      background: var(--text-color_5);
+      background: var(--text-color-5);
     }
 
     &_primary {

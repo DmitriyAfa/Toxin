@@ -5,24 +5,37 @@ mixin text(props = {})
       h2="",
       h3="",
       text="",
-      headWeight="bold",
+      weight="bold",
       transform="",
+      color=null,
+      minWidth=null,
+      align="start",
     } = props
 
-    const headWeights = ["normal"]
+    const colors = [
+      "darkest-gray", "dark-gray", "gray",
+      "light-gray","lightest-gray",
+      "primary", "secondary"
+      ]
+    const minWidths = ['50']
+    const alignVariants = ['end']
+    const weights = ["normal"]
     const transforms = ["uppercase", "capitalize"]
 
   -
-    const headWeightClass = headWeights.includes(headWeight) && `text_weight_${headWeight}`;
-    const transformClass = transforms.includes(transform) && `text_transform_${transform}`;
+    const weightClass = weights.includes(weight) && `text_weight_${weight}`
+    const transformClass = transforms.includes(transform) && `text_transform_${transform}`
+    const colorClass = colors.includes(color) && `text_color_${color}`
+    const minWidthClass = minWidths.includes(minWidth) && `text_min-width_${minWidth}`
+    const alignClass = alignVariants.includes(align) && `text_align_${align}`
 
-    const headClasses = [headWeightClass, transformClass]
+    const classes = [weightClass, transformClass, colorClass, minWidthClass, alignClass]
 
   if h1 !== ""
-    h1(class=headClasses).text= h1
+    h1.text(class=classes)= h1
   if h2 !== ""
-    h2(class=headClasses).text= h2
+    h2.text(class=classes)= h2
   if h3 !== ""
-    h3(class=headClasses).text= h3
+    h3.text(class=classes)= h3
   if text !== ""
-    p.text= text
+    p.text(class=classes)= text

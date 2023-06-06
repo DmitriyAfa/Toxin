@@ -31,7 +31,7 @@ module.exports = {
   }),
 
   entry: {
-    index: './src/pages/ui-kit-colors/ui-kit-colors.pug'
+    index: './src/pages/ui-kit-forms/ui/ui-kit-forms/ui-kit-forms.pug'
   },
 
   plugins: buildPlugins(),
