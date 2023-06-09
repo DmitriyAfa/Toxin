@@ -12,16 +12,15 @@ mixin dropdown(props = {})
     const inputSizeClass = inputSizes.includes(size) && `dropdown__input_size_${size}`
     const inputValue = variant === 'amenities' ? 'Удобства номера' : 'Сколько гостей'
 
-
-  +form-wrapper({
-    additionalClass: 'js-dropdown',
-    radiusVariant: 'top-radius-smallest',
-  })
-    +input({
-      readonly: true,
-      size: 'medium',
-      value: "2 спальни, 2 кровати ..."
+  .dropdown.js-dropdown
+    +form-wrapper({
+      radiusVariant: 'top-radius-smallest',
+      additionalClass: 'dropdown__form-wrapper',
     })
-    +button({
-      variant: 'expand',
-    })
+      +input({
+        readonly: true,
+        size: 'medium',
+        value: "2 спальни, 2 кровати ..."
+      })
+      +button-expand()
+    .dropdown__drop

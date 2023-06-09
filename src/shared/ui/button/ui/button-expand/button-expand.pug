@@ -1,0 +1,11 @@
+mixin button-expand(props={})
+  -
+    const {
+      name='button-expand',
+    } = props
+
+  +button({
+    variant: 'expand',
+    size: 'small',
+    name: name,
+  })

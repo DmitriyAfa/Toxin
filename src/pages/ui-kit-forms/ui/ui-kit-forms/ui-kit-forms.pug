@@ -19,12 +19,20 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
 
 block content
-  +column({
+  +row({
     justify: "center",
     align: "center",
-    gap: '40',
+    gap: '20',
   })
-    +dropdown()
+    //- +dropdown()
+    +button({
+      size: 'smallest',
+      variant: 'minus',
+    })
+    +button({
+      size: 'smallest',
+      variant: 'plus',
+    })
 
 block script
   script(src=require("@/features/dropdown/dropdown.js")) 
