@@ -1,0 +1,26 @@
+mixin input (props = {})
+  -
+    const {
+      type="text",
+      placeholder="Email",
+      value=null,
+      size="biggest",
+      readonly=false
+    } = props
+
+    const inputSizes = ["biggest", "big", "medium"]
+
+    const inputSizeClass = inputSizes.includes(size) && `input_size_${size}`
+
+    const inputAttributes = {
+      class: [
+        "input",
+        inputSizeClass,
+      ],
+      type: type,
+      placeholder: placeholder,
+      value: value,
+      readonly: readonly,
+    }
+
+  input&attributes(inputAttributes)

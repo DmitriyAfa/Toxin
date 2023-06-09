@@ -3,10 +3,25 @@
   border-radius: var(--radius-smallest);
 
   &_variant {
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.75s;
+
     &_arrow-right {
       background-image: url(./assets/icons/arrow_forward.svg);
-      background-repeat: no-repeat;
-      background-position: center;
+    }
+
+    &_expand {
+      &::after {
+        content: url(./assets/icons/expand_down.svg);
+        display: inline-block;
+      }
+
+      &-up {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 

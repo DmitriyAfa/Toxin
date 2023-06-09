@@ -3,6 +3,9 @@
   --radius-smallest: 4px;
   --radius-small: 6px;
   --radius-medium: 10px;
+  --top-radius-smallest: var(--radius-smallest) var(--radius-smallest) 0 0;
+  --bottom-radius-smallest: 0 0 var(--radius-smallest) var(--radius-smallest);
+
 
   // colors
   --bg-color: #fff;
@@ -19,8 +22,10 @@
   --form-border: 1px solid var(--text-color-25);
   --form-border-focused: 1px solid var(--text-color-50);
 
-  --form-width-biggest: 320px;
-  --form-width-big: 276px;
+  --input-width-biggest: 320px;
+  --input-width-big: 276px;
+  --input-width-medium: 222px;
+  --input-width-small: 106px;
   --form-height: 44px;
 
   --form-padding: 13px 15px;

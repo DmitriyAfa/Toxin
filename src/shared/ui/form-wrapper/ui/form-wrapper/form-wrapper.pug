@@ -1,0 +1,16 @@
+mixin form-wrapper(props={})
+  -
+    const {
+      isFocused=false,
+      additionalClass="",
+      radiusVariant=""
+    } = props
+
+    const radiusVariants = ['top-radius-smallest']
+
+    const focusedClass = isFocused ? "form-wrapper_focused" : ""
+    const radiusClass = radiusVariants.includes(radiusVariant) && `form-wrapper_radius_${radiusVariant}`
+    const classes = [focusedClass, radiusClass, additionalClass]
+
+  .form-wrapper(class=classes)
+    block

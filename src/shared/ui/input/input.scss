@@ -1,0 +1,27 @@
+.input {
+  height: 100%;
+  padding: var(--form-padding);
+  border-radius: var(--radius-smallest);
+  color: var(--text-color-75);
+
+  &::placeholder {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--text-color-25);
+  }
+
+  &_size {
+    &_biggest {
+      width: var(--input-width-biggest);
+    }
+
+    &_big {
+      width: var(--input-width-big);
+    }
+
+    &_medium {
+      width: var(--input-width-medium);
+    }
+  }
+}

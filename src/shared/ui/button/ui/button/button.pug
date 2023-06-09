@@ -1,19 +1,23 @@
 mixin button(props={})
   -
     const {
-      variant="",
+      variant="arrow-right",
       name="",
+      type="",
     } = props
 
-    const isArrowRightVariant = variant === "arrowRight"
+    const buttonVariants = ['arrow-right', 'expand']
+
+    const buttonVarantClass = buttonVariants.includes(variant) && `button_variant button_variant_${variant}`
 
   button&attributes({
     class: [
       "button",
-      'button_variant_arrow-right',
+      'js-button',
       'button_size_smallest',
+      buttonVarantClass,
     ],
-    type: "submit",
-    name: "subscribe",
+    type: type,
+    name: name,
   })
 

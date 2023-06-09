@@ -1,0 +1,16 @@
+.dropdown {
+  height: var(--form-height);
+  border: var(--form-border);
+  border-radius: var(--top-radius-smallest);
+  display: flex;
+  background: var(--bg-color);
+
+  &:hover {
+    border: var(--form-border-focused);
+  }
+
+  &_focused {
+    border: var(--form-border-focused);
+  }
+
+}
