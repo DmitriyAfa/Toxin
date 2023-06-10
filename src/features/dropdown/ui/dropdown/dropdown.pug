@@ -1,0 +1,26 @@
+mixin dropdown(props = {})
+  -
+    const {
+      type="text",
+      isFocused=false,
+      variant="amenities",
+      size="big",
+    } = props
+
+    const inputSizes = ["biggest", "big"]
+
+    const inputSizeClass = inputSizes.includes(size) && `dropdown__input_size_${size}`
+    const inputValue = variant === 'amenities' ? 'Удобства номера' : 'Сколько гостей'
+
+  .dropdown.js-dropdown
+    +form-wrapper({
+      radiusVariant: 'top-radius-smallest',
+      additionalClass: 'dropdown__form-wrapper',
+    })
+      +input({
+        readonly: true,
+        size: 'medium',
+        value: "2 спальни, 2 кровати ..."
+      })
+      +button-expand()
+    .dropdown__drop
