@@ -3,7 +3,7 @@ const PugPlugin = require('pug-plugin');
 module.exports = function () {
   const plugins = [
     new PugPlugin({
-      pretty: true, // formatting HTML, useful for development mode
+      pretty: true,
       js: {
         filename: 'assets/js/[name].[contenthash:8].js',
       },

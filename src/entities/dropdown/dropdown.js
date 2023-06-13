@@ -1,10 +1,10 @@
-import { toggleExpandButton, isExpandButton } from "@/shared/ui/button/button.js";
+import { toggleExpandButton, isExpandButton } from "@/shared/ui/button/button";
 
 const dropdowns = document.querySelectorAll('.js-dropdown')
 
 if (dropdowns) {
 
-  const handleToggleButton = (e) => {
+  const handleExpandBtn = (e) => {
     const classList = e.target.classList;
     if (isExpandButton(classList)) {
       toggleExpandButton(e.target.classList)
@@ -12,6 +12,8 @@ if (dropdowns) {
   }
 
   dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('click', handleToggleButton)
+    dropdown.addEventListener('click', handleExpandBtn)
   })
 }
+
+export { dropdowns };

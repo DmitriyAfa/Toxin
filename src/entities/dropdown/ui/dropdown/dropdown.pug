@@ -9,7 +9,8 @@ mixin dropdown(props = {})
       value="Сколько гостей",
     } = props
 
-    const isAmenities = variant === 'amenities';
+    const isAmenities = variant === 'amenities'
+    const name = isAmenities ? 'amenities' : 'guests'
 
     const dropdownSize = !isAmenities && `dropdown_size_${size}`
     const inputValue = isAmenities ? 'Удобства номера' : 'Сколько гостей'
@@ -17,7 +18,10 @@ mixin dropdown(props = {})
 
     const classes = [dropdownSize]
 
-  .dropdown.js-dropdown(class=classes)
+  .dropdown.js-dropdown&attributes({
+    class: classes,
+    'data-name': name,
+  })
     +form-wrapper({
       radiusVariant: 'top-radius-smallest',
       additionalClass: 'dropdown__form-wrapper',
@@ -33,6 +37,7 @@ mixin dropdown(props = {})
         +dropdown-item({
           title: item.title,
           value: item.value,
+          itemName: item.itemName,
         })
       if !isAmenities
         li.dropdown__footer.js-dropdown__footer

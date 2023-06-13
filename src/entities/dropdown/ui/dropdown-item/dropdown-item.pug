@@ -3,11 +3,14 @@ mixin dropdown-item (props = {})
     const {
       title="спальни",
       value=0,
+      itemName='',
     } = props;
 
     const minusDisabled = value <= 0
 
-  li.dropdown__item.js-dropdown__item
+  li.dropdown__item.js-dropdown__item&attributes({
+    'data-name': itemName,
+  })
     +text({
       h3: title,
       })

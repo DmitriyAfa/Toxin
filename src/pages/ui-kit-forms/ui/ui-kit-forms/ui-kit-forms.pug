@@ -6,6 +6,7 @@ include @/shared/ui/text-field/index
 include @/entities/dropdown/index
 include @/shared/ui/button/index
 include @/shared/ui/text/index
+include @/features/amenities-dropdown/index
 
 block variables
   - const title = 'Form elements'
@@ -26,44 +27,29 @@ block content
     align: "center",
     gap: '20',
   })
+    +amenities-dropdown()
     +dropdown({
-      size: 'medium',
-      value: '2 спальни, 2 кровати ...',
+      size: 'big',
+      variant: 'guests',
+      value: '3 гостя',
       items: [
         {
-          title: 'спальни',
+          title: 'взрослые',
           value: 2,
         },
         {
-          title: 'кровати',
-          value: 2,
+          title: 'дети',
+          value: 1,
         },
         {
-          title: 'ванные комнаты',
+          title: 'младенцы',
           value: 0,
         },
       ]
     })
-    //- +dropdown({
-    //-   size: 'big',
-    //-   variant: 'guests',
-    //-   value: '3 гостя',
-    //-   items: [
-    //-     {
-    //-       title: 'взрослые',
-    //-       value: 2,
-    //-     },
-    //-     {
-    //-       title: 'дети',
-    //-       value: 1,
-    //-     },
-    //-     {
-    //-       title: 'младенцы',
-    //-       value: 0,
-    //-     },
-    //-   ]
-    //- })
 
 
 block script
-  script(src=require("@/entities/dropdown/dropdown.js")) 
+  script(src=require("@/app/app"))
+  script(src=require("@/entities/dropdown/dropdown"))
+  script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
