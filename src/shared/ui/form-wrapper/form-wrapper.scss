@@ -4,6 +4,8 @@
   border-radius: var(--radius-smallest);
   display: flex;
   background: var(--bg-color);
+  position: relative;
+  z-index: var(--z-index-medium);
 
 
 

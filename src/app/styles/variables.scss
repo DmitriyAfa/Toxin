@@ -6,6 +6,8 @@
   --top-radius-smallest: var(--radius-smallest) var(--radius-smallest) 0 0;
   --bottom-radius-smallest: 0 0 var(--radius-smallest) var(--radius-smallest);
 
+  // z-index
+  --z-index-medium: 10;
 
   // colors
   --bg-color: #fff;
@@ -19,7 +21,9 @@
   --secondary-color: #6fcf97;
 
   // input
+  --form-border-50: 1px solid var(--text-color-50);
   --form-border: 1px solid var(--text-color-25);
+  --form-border-5: 1px solid var(--text-color-5);
   --form-border-focused: 1px solid var(--text-color-50);
 
   --input-width-biggest: 320px;

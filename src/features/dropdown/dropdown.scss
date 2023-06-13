@@ -6,8 +6,9 @@
     position: absolute;
     width: calc(var(--input-width-medium) + var(--button-size-small) + 1.7px);
     height: 120px;
-    top: var(--form-height);
+    top: calc(var(--form-height) - 0.7px);
     border-radius: var(--bottom-radius-smallest);
+    padding: 7px 7px 0 15px;
 
     border-right-color: var(--text-color-25);
     border-right-style: solid;
@@ -30,6 +31,20 @@
     .dropdown__form-wrapper {
       border: var(--form-border-focused);
     }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+    width: 92px;
+    justify-content: space-between;
   }
 
 }

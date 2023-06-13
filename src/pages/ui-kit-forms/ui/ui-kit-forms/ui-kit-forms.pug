@@ -5,6 +5,7 @@ include @/shared/ui/input/index
 include @/shared/ui/text-field/index
 include @/features/dropdown/index
 include @/shared/ui/button/index
+include @/shared/ui/text/index
 
 block variables
   - const title = 'Form elements'
@@ -17,6 +18,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/text-field/text-field.scss'))
   link(rel='stylesheet' href=require('@/features/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
 
 block content
   +row({
@@ -24,15 +26,23 @@ block content
     align: "center",
     gap: '20',
   })
-    //- +dropdown()
-    +button({
-      size: 'smallest',
-      variant: 'minus',
+    +dropdown({
+      items: [
+        {
+          title: 'спальни',
+          value: 2,
+        },
+        {
+          title: 'кровати',
+          value: 2,
+        },
+        {
+          title: 'ванные комнаты',
+          value: 0,
+        },
+      ]
     })
-    +button({
-      size: 'smallest',
-      variant: 'plus',
-    })
+
 
 block script
   script(src=require("@/features/dropdown/dropdown.js")) 

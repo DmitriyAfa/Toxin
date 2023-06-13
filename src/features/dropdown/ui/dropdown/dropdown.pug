@@ -5,12 +5,16 @@ mixin dropdown(props = {})
       isFocused=false,
       variant="amenities",
       size="big",
+      items=[],
     } = props
 
     const inputSizes = ["biggest", "big"]
 
     const inputSizeClass = inputSizes.includes(size) && `dropdown__input_size_${size}`
     const inputValue = variant === 'amenities' ? 'Удобства номера' : 'Сколько гостей'
+
+
+    const classes = []
 
   .dropdown.js-dropdown
     +form-wrapper({
@@ -23,4 +27,9 @@ mixin dropdown(props = {})
         value: "2 спальни, 2 кровати ..."
       })
       +button-expand()
-    .dropdown__drop
+    ul.dropdown__drop
+      each item in items
+        +dropdown-item({
+          title: item.title,
+          value: item.value,
+        })
