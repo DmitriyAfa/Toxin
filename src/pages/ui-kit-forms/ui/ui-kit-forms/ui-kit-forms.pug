@@ -3,7 +3,7 @@ include @/shared/ui/flex/index
 include @/shared/ui/form-wrapper/index
 include @/shared/ui/input/index
 include @/shared/ui/text-field/index
-include @/features/dropdown/index
+include @/entities/dropdown/index
 include @/shared/ui/button/index
 include @/shared/ui/text/index
 
@@ -16,7 +16,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/form-wrapper/form-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/input/input.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text-field/text-field.scss'))
-  link(rel='stylesheet' href=require('@/features/dropdown/dropdown.scss'))
+  link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
 
@@ -27,6 +27,8 @@ block content
     gap: '20',
   })
     +dropdown({
+      size: 'medium',
+      value: '2 спальни, 2 кровати ...',
       items: [
         {
           title: 'спальни',
@@ -42,7 +44,26 @@ block content
         },
       ]
     })
+    //- +dropdown({
+    //-   size: 'big',
+    //-   variant: 'guests',
+    //-   value: '3 гостя',
+    //-   items: [
+    //-     {
+    //-       title: 'взрослые',
+    //-       value: 2,
+    //-     },
+    //-     {
+    //-       title: 'дети',
+    //-       value: 1,
+    //-     },
+    //-     {
+    //-       title: 'младенцы',
+    //-       value: 0,
+    //-     },
+    //-   ]
+    //- })
 
 
 block script
-  script(src=require("@/features/dropdown/dropdown.js")) 
+  script(src=require("@/entities/dropdown/dropdown.js")) 

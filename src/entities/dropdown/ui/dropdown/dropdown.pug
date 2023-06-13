@@ -1,0 +1,50 @@
+mixin dropdown(props = {})
+  -
+    const {
+      type="text",
+      isFocused=false,
+      variant="amenities",
+      size="big",
+      items=[],
+      value="Сколько гостей",
+    } = props
+
+    const isAmenities = variant === 'amenities';
+
+    const dropdownSize = !isAmenities && `dropdown_size_${size}`
+    const inputValue = isAmenities ? 'Удобства номера' : 'Сколько гостей'
+
+
+    const classes = [dropdownSize]
+
+  .dropdown.js-dropdown(class=classes)
+    +form-wrapper({
+      radiusVariant: 'top-radius-smallest',
+      additionalClass: 'dropdown__form-wrapper',
+    })
+      +input({
+        readonly: true,
+        size: size,
+        value: value,
+      })
+      +button-expand()
+    ul.dropdown__drop.js-dropdown__drop
+      each item in items
+        +dropdown-item({
+          title: item.title,
+          value: item.value,
+        })
+      if !isAmenities
+        li.dropdown__footer.js-dropdown__footer
+          +button({
+            visability: true,
+          })
+            +text({
+              h3: 'очистить',
+              color: 'primary',
+            })
+          +button()
+            +text({
+              h3: 'применить',
+              color: 'primary',
+            })

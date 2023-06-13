@@ -1,11 +1,12 @@
 mixin button(props={})
   -
     const {
-      variant="arrow-right",
+      variant="",
       name="",
       type="",
-      size="small",
+      size="",
       disabled=false,
+      visability=true,
     } = props
 
     const mathVariants = ['minus', 'plus']
@@ -27,6 +28,7 @@ mixin button(props={})
 
     const mathDisabledClass = disabled && isMathVariant(mathVariants, variant) && 'button_variant_math_disabled' 
 
+    const visabilityClass = !visability && 'button_visability_hidden'
 
   button&attributes({
     class: [
@@ -35,9 +37,11 @@ mixin button(props={})
       sizeClass,
       variantClass,
       mathDisabledClass,
+      visabilityClass,
     ],
     type: type,
     name: name,
     disabled: disabled,
   })
+    block
 
