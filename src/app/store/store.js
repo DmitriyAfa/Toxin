@@ -7,4 +7,6 @@ const store = configureStore({
   },
 })
 
+store.subscribe(() => console.log(store.getState()))
+
 export { store };

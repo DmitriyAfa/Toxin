@@ -1,7 +1,8 @@
 import { buttonVariants } from '@/shared/ui/button/button';
-import amenitiesReducer, { incrementBedroom } from './model/slices/amenitiesSlice';
+import amenitiesReducer, { decrementBedroom, incrementBedroom } from './model/slices/amenitiesSlice';
 import { dropdowns } from '@/entities/dropdown/dropdown';
 import { appDispatch, store } from '@/app/app';
+import { toggleMinusButton } from '@/shared/ui/button/button';
 
 
 if (dropdowns) {
@@ -19,14 +20,31 @@ if (dropdowns) {
     const bathroomItem = items.find(elem => (elem.dataset.name === 'bathroom'));
 
     if (bedroomItem) {
+      const text = bedroomItem.querySelector(`.js-dropdown__counter`).querySelector('.js-text')
       const minusBtn = bedroomItem.querySelector(`.${buttonVariants.MINUS}`)
       const plusBtn = bedroomItem.querySelector(`.${buttonVariants.PLUS}`)
-      const plusClickHandle = async () => {
+
+      const plusClickHandle = () => {
         appDispatch(incrementBedroom())
-        const amanitites = await store.getState();
-        console.log(amanitites.bedroom)
+        const state = store.getState();
+        if (state.amenities.bedroom !== undefined) {
+          text.innerText = state.amenities.bedroom
+        }
       }
+
+      const minusClickHandle = (e) => {
+        e.target.preventDefault;
+        appDispatch(decrementBedroom())
+        const state = store.getState();
+        const minusClasslist = e.target.classList;
+        if (state.amenities.bedroom !== undefined) {
+          text.innerText = state.amenities.bedroom
+          console.log(minusBtn.classList)
+        }
+      }
+
       plusBtn.addEventListener('click', plusClickHandle)
+      minusBtn.addEventListener('click', 'tr', minusClickHandle)
     }
   }
 }

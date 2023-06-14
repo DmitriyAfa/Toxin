@@ -29,7 +29,7 @@ mixin text(props = {})
     const minWidthClass = minWidths.includes(minWidth) && `text_min-width_${minWidth}`
     const alignClass = alignVariants.includes(align) && `text_align_${align}`
 
-    const classes = [weightClass, transformClass, colorClass, minWidthClass, alignClass]
+    const classes = ['js-text',weightClass, transformClass, colorClass, minWidthClass, alignClass,]
 
   if h1 !== ""
     h1.text(class=classes)= h1
