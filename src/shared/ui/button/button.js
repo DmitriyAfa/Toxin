@@ -3,12 +3,16 @@ import { buttonVariants } from "./constants/buttonConstants";
 const toggleExpandButton = (classList) => {
   classList.toggle('button_variant_expand-up')
 }
-const toggleMinusButton = (classList) => {
-  classList.toggle('example1212eqw')
+const removeDisabledFromMinusBtn = (classList) => {
+  classList.remove('button_variant_math_disabled')
 }
+const addDisabledFromMinusBtn = (classList) => {
+  classList.add('button_variant_math_disabled')
+}
+
 
 const isExpandButton = (classList) => {
   return classList.contains(buttonVariants.EXPAND);
 }
 
-export { toggleExpandButton, toggleMinusButton, isExpandButton, buttonVariants }
+export { toggleExpandButton, removeDisabledFromMinusBtn, addDisabledFromMinusBtn, isExpandButton, buttonVariants }

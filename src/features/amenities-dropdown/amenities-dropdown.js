@@ -1,8 +1,9 @@
+import { appDispatch, store } from '@/app/app';
 import { buttonVariants } from '@/shared/ui/button/button';
 import amenitiesReducer, { decrementBedroom, incrementBedroom } from './model/slices/amenitiesSlice';
 import { dropdowns } from '@/entities/dropdown/dropdown';
-import { appDispatch, store } from '@/app/app';
-import { toggleMinusButton } from '@/shared/ui/button/button';
+
+import { removeDisabledFromMinusBtn, addDisabledFromMinusBtn } from '@/shared/ui/button/button';
 
 
 if (dropdowns) {
@@ -23,28 +24,33 @@ if (dropdowns) {
       const text = bedroomItem.querySelector(`.js-dropdown__counter`).querySelector('.js-text')
       const minusBtn = bedroomItem.querySelector(`.${buttonVariants.MINUS}`)
       const plusBtn = bedroomItem.querySelector(`.${buttonVariants.PLUS}`)
+      const minusBtnClassList = minusBtn.classList;
 
       const plusClickHandle = () => {
         appDispatch(incrementBedroom())
         const state = store.getState();
         if (state.amenities.bedroom !== undefined) {
           text.innerText = state.amenities.bedroom
+          if (state.amenities.bedroom > 0) {
+            removeDisabledFromMinusBtn(minusBtnClassList)
+          }
         }
       }
 
-      const minusClickHandle = (e) => {
-        e.target.preventDefault;
+      const minusClickHandle = () => {
         appDispatch(decrementBedroom())
         const state = store.getState();
-        const minusClasslist = e.target.classList;
         if (state.amenities.bedroom !== undefined) {
           text.innerText = state.amenities.bedroom
-          console.log(minusBtn.classList)
+
+          if (state.amenities.bedroom <= 0 && !minusBtnClassList.contains('button_variant_math_disabled')) {
+            addDisabledFromMinusBtn(minusBtnClassList)
+          }
         }
       }
 
       plusBtn.addEventListener('click', plusClickHandle)
-      minusBtn.addEventListener('click', 'tr', minusClickHandle)
+      minusBtn.addEventListener('click', minusClickHandle)
     }
   }
 }
