@@ -1,8 +1,5 @@
-import { appDispatch, store } from '@/app/app';
 import { buttonVariants } from '@/shared/ui/button/button';
-import amenitiesReducer, { decrementBedroom, incrementBedroom } from './model/slices/amenitiesSlice';
 import { dropdowns } from '@/entities/dropdown/dropdown';
-
 import { removeDisabledFromMinusBtn, addDisabledFromMinusBtn } from '@/shared/ui/button/button';
 
 
@@ -27,8 +24,6 @@ if (dropdowns) {
       const minusBtnClassList = minusBtn.classList;
 
       const plusClickHandle = () => {
-        appDispatch(incrementBedroom())
-        const state = store.getState();
         if (state.amenities.bedroom !== undefined) {
           text.innerText = state.amenities.bedroom
           if (state.amenities.bedroom > 0) {
@@ -38,11 +33,8 @@ if (dropdowns) {
       }
 
       const minusClickHandle = () => {
-        appDispatch(decrementBedroom())
-        const state = store.getState();
         if (state.amenities.bedroom !== undefined) {
           text.innerText = state.amenities.bedroom
-
           if (state.amenities.bedroom <= 0 && !minusBtnClassList.contains('button_variant_math_disabled')) {
             addDisabledFromMinusBtn(minusBtnClassList)
           }
@@ -54,5 +46,3 @@ if (dropdowns) {
     }
   }
 }
-
-export { amenitiesReducer }
