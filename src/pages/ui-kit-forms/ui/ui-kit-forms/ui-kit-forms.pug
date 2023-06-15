@@ -7,6 +7,7 @@ include @/entities/dropdown/index
 include @/shared/ui/button/index
 include @/shared/ui/text/index
 include @/features/amenities-dropdown/index
+include @/features/guests-dropdown/index
 
 block variables
   - const title = 'Form elements'
@@ -28,27 +29,11 @@ block content
     gap: '20',
   })
     +amenities-dropdown()
-    +dropdown({
-      size: 'big',
-      variant: 'guests',
-      value: '3 гостя',
-      items: [
-        {
-          title: 'взрослые',
-          value: 2,
-        },
-        {
-          title: 'дети',
-          value: 1,
-        },
-        {
-          title: 'младенцы',
-          value: 0,
-        },
-      ]
-    })
+    +amenities-dropdown()
+    +guests-dropdown()
 
 
 block script
   script(src=require("@/entities/dropdown/dropdown"))
   script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
+  script(src=require("@/features/guests-dropdown/guests-dropdown"))

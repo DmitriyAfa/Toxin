@@ -18,6 +18,10 @@
   }
 
   &_radius {
+    &_smallest {
+      border-radius: var(--radius-smallest);
+    }
+
     &_top-radius-smallest {
       border-radius: var(--top-radius-smallest);
     }

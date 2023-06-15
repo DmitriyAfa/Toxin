@@ -1,20 +1,21 @@
-mixin amenities-dropdown()
+mixin guests-dropdown()
   +dropdown({
-    size: 'medium',
-    value: "Выберите удобства",
+    size: 'big',
+    variant: 'guests',
+    value: "Сколько гостей",
     items: [
       {
-        title: 'спальни',
+        title: 'взрослые',
         value: 0,
         itemName: 'first',
       },
       {
-        title: 'кровати',
+        title: 'дети',
         value: 0,
         itemName: 'second',
       },
       {
-        title: 'ванные комнаты',
+        title: 'младенцы',
         value: 0,
         itemName: 'third',
       },

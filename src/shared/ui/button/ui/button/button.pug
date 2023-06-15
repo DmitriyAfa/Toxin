@@ -6,6 +6,7 @@ mixin button(props={})
       size="",
       disabled=false,
       visability=true,
+      name="",
     } = props
 
     const mathVariants = ['minus', 'plus']
@@ -39,6 +40,7 @@ mixin button(props={})
       visabilityClass,
     ],
     type: type,
+    'data-name': name,
   })
     block
 

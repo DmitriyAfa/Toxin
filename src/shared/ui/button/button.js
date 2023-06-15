@@ -9,10 +9,26 @@ const removeDisabledFromMinusBtn = (classList) => {
 const addDisabledFromMinusBtn = (classList) => {
   classList.add('button_variant_math_disabled')
 }
+const removeBtnVisability = (classList) => {
+  classList.add('button_visability_hidden')
+}
+const addBtnVisability = (classList) => {
+  classList.remove('button_visability_hidden')
+}
+
+
 
 
 const isExpandButton = (classList) => {
   return classList.contains(buttonVariants.EXPAND);
 }
 
-export { toggleExpandButton, removeDisabledFromMinusBtn, addDisabledFromMinusBtn, isExpandButton, buttonVariants }
+export {
+  toggleExpandButton,
+  removeDisabledFromMinusBtn,
+  addDisabledFromMinusBtn,
+  isExpandButton,
+  addBtnVisability,
+  removeBtnVisability,
+  buttonVariants,
+}

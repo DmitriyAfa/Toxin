@@ -1,9 +1,7 @@
+import { isLessOrEqualFour, isMoreThanFour, isMoreThanZero, isOne, isZero } from "@/shared/lib/checkers"
+
 function makeAmenitiesText(amenities) {
-  const isZero = (value) => (value === 0);
-  const isOne = (value) => (value === 1);
-  const isMoreThanZero = (value) => (value > 0);
-  const isMoreThanFour = (value) => (value > 4);
-  const isLessOrEqualFour = (value) => (value <= 4);
+
 
   const makeBedroomText = () => {
     const text = []
@@ -23,16 +21,9 @@ function makeAmenitiesText(amenities) {
     return text;
   }
 
-  const makeBathroomText = () => {
-    const text = []
-    if (isOne(amenities.third)) text.push(`${amenities.third} ванная комната`)
-    if (isLessOrEqualFour(amenities.third) && isMoreThanZero(amenities.third) && !isOne(amenities.third)) text.push(`${amenities.third} ванные комнаты`)
-    if (isMoreThanFour(amenities.third) || isZero(amenities.third)) text.push(`${amenities.third} ванных комнат`)
+  const result = [...makeBedroomText(), ...makeBedText()].join(', ');
 
-    return text;
-  }
-
-  return [...makeBedroomText(), ...makeBedText(), ...makeBathroomText()];
+  return `${result}...`;
 }
 
 export { makeAmenitiesText };

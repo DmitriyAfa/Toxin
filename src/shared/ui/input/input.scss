@@ -11,6 +11,10 @@
     color: var(--text-color-25);
   }
 
+  &_readonly {
+    cursor: default;
+  }
+
   &_size {
     &_biggest {
       width: var(--input-width-biggest);

@@ -1,31 +1,47 @@
-import { toggleExpandButton, isExpandButton, buttonVariants, removeDisabledFromMinusBtn, addDisabledFromMinusBtn } from "@/shared/ui/button/button";
+import {
+  toggleExpandButton,
+  isExpandButton,
+  buttonVariants,
+  removeDisabledFromMinusBtn,
+  addDisabledFromMinusBtn,
+  addBtnVisability,
+  removeBtnVisability,
+} from "@/shared/ui/button/button";
 
 const dropdowns = document.querySelectorAll('.js-dropdown')
 
-if (dropdowns) {
+const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name = 'amenities' }) => {
+  const drop = dropdown.querySelector('.js-dropdown__drop');
+  const expandBtn = dropdown.querySelector(`.${buttonVariants.EXPAND}`)
+  const formWrapper = dropdown.querySelector('.js-dropdown__form-wrapper')
 
   const handleExpandBtn = (e) => {
-    const classList = e.target.classList;
-    if (isExpandButton(classList)) {
-      toggleExpandButton(e.target.classList)
+    toggleExpandButton(e.target.classList)
+    drop.classList.toggle('dropdown__drop_hidden')
+
+    if (name === 'guests') {
+      formWrapper.classList.toggle('form-wrapper_radius_top-radius-smallest')
     }
   }
+  expandBtn.addEventListener('click', handleExpandBtn)
 
-  dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('click', handleExpandBtn)
-  })
-}
-
-const makeDropdownFunctional = (dropdown, makeInputTextCallback) => {
-  const state = {
+  let state = {
     first: 0,
     second: 0,
     third: 0,
   }
-  const drop = dropdown.querySelector('.js-dropdown__drop');
   const input = dropdown.querySelector('.js-input')
+  let footer;
+  let clearBtn;
+  let clearBtnClassList;
   let items = drop.querySelectorAll('.js-dropdown__item');
   items = [...items]
+
+  if (name === 'guests') {
+    footer = drop.querySelector('.js-dropdown__footer')
+    clearBtn = footer.querySelector('.js-button')
+    clearBtnClassList = clearBtn.classList
+  }
 
   function makeCounterHandler({ stateName, state }) {
     const item = items.find(elem => (elem.dataset.name === stateName));
@@ -39,13 +55,14 @@ const makeDropdownFunctional = (dropdown, makeInputTextCallback) => {
       const plusClickHandle = () => {
         state[stateName] += 1
         counterText.innerText = state[stateName]
-        let text = makeInputTextCallback(state)
-        // text.pop()
+        const text = makeInputTextCallback(state)
 
-        // input.value = `${text.join(', ')}...`;
-        console.log(text)
+        input.value = text;
         if (state[stateName] > 0) {
           removeDisabledFromMinusBtn(minusBtnClassList)
+        }
+        if (clearBtnClassList && (state.first > 0 || state.second > 0 || state.third > 0) && clearBtnClassList.contains('button_visability_hidden')) {
+          addBtnVisability(clearBtnClassList)
         }
       }
 
@@ -53,20 +70,38 @@ const makeDropdownFunctional = (dropdown, makeInputTextCallback) => {
         if (state[stateName] > 0) {
           state[stateName] -= 1
           counterText.innerText = state[stateName]
-          let text = makeInputTextCallback(state)
-          // text.pop()
+          const text = makeInputTextCallback(state)
 
-          // input.value = `${text.join(', ')}...`;
-
-          console.log(text)
+          input.value = text;
           if (state[stateName] <= 0 && !minusBtnClassList.contains('button_variant_math_disabled')) {
             addDisabledFromMinusBtn(minusBtnClassList)
+          }
+          if (clearBtnClassList && state.first === 0 && state.second === 0 && state.third === 0 && !clearBtnClassList.contains('button_visability_hidden')) {
+            removeBtnVisability(clearBtnClassList)
           }
         }
       }
 
       plusBtn.addEventListener('click', plusClickHandle)
       minusBtn.addEventListener('click', minusClickHandle)
+
+
+      if (clearBtn) {
+        const countersText = counter.querySelectorAll('.js-text')
+        const minusBtns = counter.querySelectorAll(`.${buttonVariants.MINUS}`)
+        const clearBtnHandle = () => {
+          removeBtnVisability(clearBtnClassList)
+          countersText.forEach((text) => text.innerText = 0)
+          minusBtns.forEach((btn) => addDisabledFromMinusBtn(btn.classList))
+          input.value = "Сколько гостей";
+          state.first = 0
+          state.second = 0
+          state.third = 0
+        }
+
+        clearBtn.addEventListener('click', clearBtnHandle)
+      }
+
     } else {
       console.log(`Item with the name ${stateName} is not found`)
     }
