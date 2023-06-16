@@ -2,10 +2,11 @@ mixin input (props = {})
   -
     const {
       type="text",
-      placeholder="Email",
-      value=null,
+      placeholder="",
+      value=undefined,
       size="biggest",
       readonly=false,
+      ...otherProps
     } = props
 
     const inputSizes = ["biggest", "big", "medium"]
@@ -24,6 +25,7 @@ mixin input (props = {})
       placeholder: placeholder,
       value: value,
       readonly: readonly,
+      ...otherProps,
     }
 
   input&attributes(inputAttributes)

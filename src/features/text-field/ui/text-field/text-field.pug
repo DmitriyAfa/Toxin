@@ -1,0 +1,27 @@
+mixin text-field(props = {})
+  -
+    const {
+      type="text",
+      placeholder="Email",
+      value=undefined,
+      size="biggest",
+      variant="",
+      isFocused=false,
+      ...otherProps
+    } = props
+
+    const classes = type === 'date' ? 'text-field_date' : ''
+
+  .text-field(class=classes)
+    +form-wrapper({
+    isFocused: isFocused,
+    })
+      +input({
+        size: size,
+        value: value,
+        placeholder: placeholder,
+        type: type,
+        ...otherProps
+      })
+      if variant === "subscribtion"
+        +button()
