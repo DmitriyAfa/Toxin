@@ -7,14 +7,17 @@ mixin text-field(props = {})
       size="biggest",
       variant="",
       isFocused=false,
+      additionalClass='',
+      radiusVariant='',
       ...otherProps
     } = props
 
-    const classes = type === 'date' ? 'text-field_date' : ''
+    const classes = ['js-text-field', additionalClass]
 
   .text-field(class=classes)
     +form-wrapper({
     isFocused: isFocused,
+    radiusVariant: radiusVariant,
     })
       +input({
         size: size,
@@ -23,5 +26,6 @@ mixin text-field(props = {})
         type: type,
         ...otherProps
       })
+      block
       if variant === "subscribtion"
         +button()

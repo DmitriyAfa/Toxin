@@ -27,5 +27,9 @@
     &_medium {
       width: var(--input-width-medium);
     }
+
+    &_small {
+      width: var(--input-width-small);
+    }
   }
 }

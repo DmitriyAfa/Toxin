@@ -9,7 +9,8 @@ mixin input (props = {})
       ...otherProps
     } = props
 
-    const inputSizes = ["biggest", "big", "medium"]
+
+    const inputSizes = ['small', "big", "medium", "biggest",]
 
     const inputSizeClass = inputSizes.includes(size) && `input_size_${size}`
     const readonlyClass = readonly && 'input_readonly'

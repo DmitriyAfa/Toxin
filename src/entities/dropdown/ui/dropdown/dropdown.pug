@@ -3,15 +3,18 @@ mixin dropdown(props = {})
     const {
       type="text",
       isFocused=false,
-      variant="amenities",
       size="big",
       items=[],
       value="",
       hidden=true,
+      name='',
+      dataMultipleDateSeparator=undefined,
+      variant='',
+      placeholder='',
     } = props
 
-    const isAmenities = variant === 'amenities'
-    const name = isAmenities ? 'amenities' : 'guests'
+    const isAmenities = name === 'amenities'
+    const hasFooter = (name === 'amenities' || name === 'guests')
 
     const dropdownSize = !isAmenities && `dropdown_size_${size}`
     const hiddenDropClass = hidden && 'dropdown__drop_hidden'
@@ -31,27 +34,33 @@ mixin dropdown(props = {})
         readonly: true,
         size: size,
         value: value,
+        type: type,
+        'data-multiple-date-separator': dataMultipleDateSeparator,
+        placeholder: placeholder,
+        disabled: true,
       })
-      +button-expand()
-    ul.dropdown__drop.js-dropdown__drop(class=hiddenDropClass)
-      each item in items
-        +dropdown-item({
-          title: item.title,
-          value: item.value,
-          itemName: item.itemName,
-        })
-      if !isAmenities
-        li.dropdown__footer.js-dropdown__footer
-          +button({
-            name: 'clear',
-            visability: false,
+      span.js-dropdown__button-expand
+        +button-expand()
+    if hasFooter
+      ul.dropdown__drop.js-dropdown__drop(class=hiddenDropClass)
+        each item in items
+          +dropdown-item({
+            title: item.title,
+            value: item.value,
+            itemName: item.itemName,
           })
-            +text({
-              h3: 'очистить',
-              color: 'primary'
+        if  name === 'guests'
+          li.dropdown__footer.js-dropdown__footer
+            +button({
+              name: 'clear',
+              visability: false,
             })
-          +button()
-            +text({
-              h3: 'применить',
-              color: 'primary',
-            })
+              +text({
+                h3: 'очистить',
+                color: 'primary'
+              })
+            +button()
+              +text({
+                h3: 'применить',
+                color: 'primary',
+              })

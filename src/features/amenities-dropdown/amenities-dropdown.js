@@ -10,6 +10,7 @@ if (dropdowns) {
       makeDropdownFunctional({
         dropdown,
         makeInputTextCallback: makeAmenitiesText,
+        name: name,
       })
     }
   })

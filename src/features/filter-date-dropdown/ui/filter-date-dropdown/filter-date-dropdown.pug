@@ -1,0 +1,23 @@
+mixin filter-date-dropdown(props = {})
+  -
+    const {
+      a=''
+    } = props;
+
+    const classes = ['js-filter-date-dropdown',]
+
+  .filter-date-dropodown(class=classes)
+    +flex({
+      gap: '20',
+    })
+      +dropdown({
+        size: 'small',
+        name: 'start',
+        dataMultipleDateSeparator: ' - ',
+        placeholder: 'ДД.ММ.ГГГГ',
+      })
+      +dropdown({
+        size: 'small',
+        name: 'end',
+        placeholder: 'ДД.ММ.ГГГГ',
+      })
