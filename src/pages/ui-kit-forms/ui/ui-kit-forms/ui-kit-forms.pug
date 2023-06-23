@@ -8,7 +8,7 @@ include @/shared/ui/text/index
 include @/features/amenities-dropdown/index
 include @/features/guests-dropdown/index
 include @/features/text-field/index
-include @/features/filter-date-dropdown/index
+include @/features/date-dropdown/index
 
 block variables
   - const title = 'Form elements'
@@ -19,7 +19,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/form-wrapper/form-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/input/input.scss'))
   link(rel='stylesheet' href=require('@/features/text-field/text-field.scss'))
-  link(rel='stylesheet' href=require('@/features/filter-date-dropdown/filter-date-dropdown.scss'))
+  link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
@@ -31,7 +31,13 @@ block content
     align: "center",
     gap: '20',
   })
-    +filter-date-dropdown()
+    +column({
+      gap: '40',
+    })
+      +date-dropdown()
+      +date-dropdown({
+        variant: 'filter',
+      })
     //- +guests-dropdown()
     //- +amenities-dropdown()
 
@@ -41,4 +47,4 @@ block script
   script(src=require("@/entities/dropdown/dropdown"))
   script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
   script(src=require("@/features/guests-dropdown/guests-dropdown"))
-  script(src=require("@/features/filter-date-dropdown/filter-date-dropdown"))
+  script(src=require("@/features/date-dropdown/date-dropdown"))
