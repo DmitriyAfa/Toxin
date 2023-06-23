@@ -4,6 +4,7 @@ include @/shared/ui/form-wrapper/index
 include @/shared/ui/input/index
 include @/entities/dropdown/index
 include @/shared/ui/button/index
+include @/shared/ui/checkbox/index
 include @/shared/ui/text/index
 include @/shared/ui/named-wrapper/index
 include @/features/amenities-dropdown/index
@@ -25,6 +26,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/named-wrapper/named-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/checkbox/checkbox.scss'))
   link(rel='stylesheet' href=require('air-datepicker/air-datepicker.css'))
 
 block content
@@ -36,10 +38,12 @@ block content
     +column({
       gap: '40',
     })
-      //- +date-dropdown()
-      +date-dropdown({
-        variant: 'filter',
+      +checkbox({
+        title: 'Широкий каридор',
+        description: 'Ширина коридоров в номере не менее 91 см.',
+        isRich: true,
       })
+
 
 block script
   script(src=require("@/app/app"))
