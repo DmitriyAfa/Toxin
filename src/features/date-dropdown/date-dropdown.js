@@ -115,6 +115,23 @@ const makeFilterDateDropdown = (element) => {
     },
     range: true,
     multipleDatesSeparator: ' - ',
+    buttons: [
+      {
+        content() {
+          return 'очистить'
+        },
+        async onClick(dp) {
+          dp.clear()
+        }
+      },
+      {
+        content(dp) {
+          return 'применить'
+        },
+        onClick(dp) {
+        }
+      }
+    ],
   });
 
   const expandBtnHandller = (e) => {
