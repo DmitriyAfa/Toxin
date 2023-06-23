@@ -5,6 +5,7 @@ include @/shared/ui/input/index
 include @/entities/dropdown/index
 include @/shared/ui/button/index
 include @/shared/ui/text/index
+include @/shared/ui/named-wrapper/index
 include @/features/amenities-dropdown/index
 include @/features/guests-dropdown/index
 include @/features/text-field/index
@@ -22,6 +23,7 @@ block style
   link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/named-wrapper/named-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
   link(rel='stylesheet' href=require('air-datepicker/air-datepicker.css'))
 
@@ -31,15 +33,11 @@ block content
     align: "center",
     gap: '20',
   })
-    +column({
-      gap: '40',
+    +named-wrapper({
+      title: 'text field',
+      stateName: 'default',
     })
-      +date-dropdown()
-      +date-dropdown({
-        variant: 'filter',
-      })
-    //- +guests-dropdown()
-    //- +amenities-dropdown()
+
 
 block script
   script(src=require("@/app/app"))

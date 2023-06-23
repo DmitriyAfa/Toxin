@@ -9,8 +9,8 @@ mixin flex(props = {})
     } = props
 
     const gaps = ["20", "30", "40", "50",]
-    const widths = ["59", "69",]
-    const justifyVariants = ["start", "center", "end", "around"]
+    const widths = ["59", "69", "100"]
+    const justifyVariants = ["start", "center", "end", "around", "between"]
 
   -
     const justifyClass = justifyVariants.includes(justify) && `flex_justify_${justify}`
@@ -26,7 +26,7 @@ mixin flex(props = {})
     const gapClass = gaps.includes(gap) && `flex_gap_${gap}`
     const widthClass = widths.includes(width) && `flex_width_${width}`
 
-    const classes = [justifyClass, alignClass, directionClass, gapClass, widthClass]
+    const classes = [justifyClass, alignClass, directionClass, gapClass, widthClass, fontSizeClass]
 
   .flex(class=classes)
     block

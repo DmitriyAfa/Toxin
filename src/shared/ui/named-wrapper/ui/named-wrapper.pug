@@ -1,0 +1,26 @@
+mixin named-wrapper(props = {})
+  -
+    const {
+      title='',
+      stateName=undefined,
+      gap='',
+    } = props
+
+  .named-wrapper
+    +column({
+      gap: gap,
+    })
+      +row({
+        justify: 'between',
+        align: 'center',
+      })
+        +text({
+          h3: title,
+        })
+        if stateName !== undefined
+          +text({
+          h3: stateName,
+          weight: 'normal',
+          color: 'gray',
+          })
+      block
