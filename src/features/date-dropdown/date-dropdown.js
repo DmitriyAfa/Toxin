@@ -25,6 +25,13 @@ function makeDateDropdowns(element) {
 
   dpMin = new AirDatepicker($start, {
     onSelect({ date, formattedDate, datepicker, }) {
+
+      if (formattedDate.length === 0) {
+        datepicker.$el.value = ''
+        dpMax.$el.value = ''
+        return;
+      }
+
       datepicker.$el.value = formattedDate[0]
       if (formattedDate[1]) {
         dpMax.$el.value = formattedDate[1]
@@ -34,7 +41,26 @@ function makeDateDropdowns(element) {
     },
     multipleDatesSeparator: ' - ',
     range: true,
+    buttons: [
+      {
+        content() {
+          return 'очистить'
+        },
+        async onClick(dp) {
+          await dpMin.clear()
+          dp.$el.value = ''
+        }
+      },
+      {
+        content(dp) {
+          return 'применить'
+        },
+        onClick(dp) {
+        }
+      }
+    ],
   })
+
 
   dpMax = new AirDatepicker($end)
 
@@ -62,7 +88,6 @@ function makeDateDropdowns(element) {
 
 
   startExpandButton.addEventListener('click', startExpandBtnHandller)
-
   endExpandButton.addEventListener('click', endExpandBtnHandller)
 
 }

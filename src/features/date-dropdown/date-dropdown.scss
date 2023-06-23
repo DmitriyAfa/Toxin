@@ -1,0 +1,204 @@
+.air-datepicker-global-container {
+  .air-datepicker {
+    z-index: 3;
+    min-width: 320px;
+    border: var(--form-border);
+    border-radius: var(--radius-smallest);
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.25);
+
+    // --air datepicker nav
+    &-nav {
+      padding: 14px 16px;
+      border: none;
+
+      &--action {
+
+        &::after {
+          content: url(./assets/icons/arrow_forward.svg);
+        }
+
+        &[data-action='next'] {
+          &::after {
+            position: absolute;
+            top: 22px;
+          }
+        }
+
+        &[data-action='prev'] {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+
+        svg {
+          display: none;
+        }
+      }
+
+      &--title {
+        font: var(--font-h2);
+
+        i {
+          color: var(----text-color);
+        }
+      }
+    }
+
+    // air datepicker nav--
+
+    &--pointer {
+      display: none;
+    }
+
+    // --air datepicker content
+    &--content {
+      padding: 0 20px;
+
+      .air-datepicker-body--day-names {
+        padding: 24px 0 12px 0;
+        margin: 0;
+
+        .air-datepicker-body--day-name {
+          color: var(--primary-color);
+          font: 700 12px Montserrat, Areal, sans-serif;
+          text-transform: capitalize;
+        }
+      }
+
+      .air-datepicker-body--cells {
+        color: var(--text-color-50);
+        font: 400 12px Montserrat, Areal, sans-serif;
+
+        &.-days- {
+          grid-auto-rows: 40px;
+        }
+
+        .air-datepicker-cell {
+          border-radius: 22px;
+
+          &.-focus- {
+            background: var(--text-color-5);
+          }
+
+          &.-current- {
+            color: #fff;
+            font-weight: bold;
+            background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+            &.-in-range- {
+              color: #fff;
+            }
+          }
+
+          &.-in-range- {
+            color: var(--text-color-50);
+            background: linear-gradient(180deg,
+                rgba(#bc9cff, 0.25) 0%,
+                rgba(#8ba4f9, 0.25) 100%);
+            border-radius: 0;
+
+            &.-focus- {
+              color: #fff;
+              background: linear-gradient(180deg,
+                  rgba(#bc9cff, 0.25) 0%,
+                  rgba(#8ba4f9, 0.25) 100%);
+            }
+          }
+
+          &.-range-from- {
+            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+
+            border: none;
+            border-radius: 22px;
+
+            &::after {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: -1;
+              background: linear-gradient(180deg,
+                  rgba(#bc9cff, 0.25) 0%,
+                  rgba(#8ba4f9, 0.25) 100%);
+              border-radius: 50% 0 0 50%;
+              content: '';
+            }
+
+            &.-focus- {
+              color: #fff;
+            }
+          }
+
+          &.-range-to- {
+            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+            border: none;
+            border-radius: 22px;
+
+            &::before {
+              position: absolute;
+              top: 0;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              z-index: -1;
+              background: linear-gradient(180deg,
+                  rgba(#bc9cff, 0.25) 0%,
+                  rgba(#8ba4f9, 0.25) 100%);
+              border-radius: 0 50% 50% 0;
+              content: '';
+            }
+
+            &.-focus- {
+              color: #fff;
+            }
+          }
+
+          &.-range-from-.-range-to- {
+            border-radius: 22px;
+          }
+
+          &.-selected- {
+            color: #fff;
+            font-weight: bold;
+            background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+            border: none;
+
+            &.-current- {
+              color: #fff;
+              background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+            }
+
+            &.-focus- {
+              background: linear-gradient(180deg,
+                  rgba(#bc9cff, 0.25) 0%,
+                  rgba(#8ba4f9, 0.25) 100%);
+            }
+          }
+        }
+      }
+    }
+
+    // air datepicker content--
+
+    // --air datepicker buttons
+    &--buttons {
+      border: none;
+      padding: 12px 20px;
+
+      .air-datepicker-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        .air-datepicker-button {
+          font: var(--font-h3);
+          color: var(--primary-color);
+          text-transform: uppercase;
+        }
+      }
+
+    }
+
+    // air datepicker buttons--
+  }
+}

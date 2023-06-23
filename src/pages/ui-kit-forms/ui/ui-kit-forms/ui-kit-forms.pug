@@ -33,11 +33,13 @@ block content
     align: "center",
     gap: '20',
   })
-    +named-wrapper({
-      title: 'text field',
-      stateName: 'default',
+    +column({
+      gap: '40',
     })
-
+      +date-dropdown()
+      //- +date-dropdown({
+      //-   variant: 'filter',
+      //- })
 
 block script
   script(src=require("@/app/app"))
