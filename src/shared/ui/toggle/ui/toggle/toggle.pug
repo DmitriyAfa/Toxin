@@ -1,0 +1,17 @@
+mixin toggle(props={})
+  -
+    const {
+      title='title',
+      checked=false,
+    } = props;
+
+  label.toggle
+    .toggle__container
+      input&attributes({
+        class: "toggle__input js-toggle__input",
+        type: "checkbox",
+        name: title,
+        checked: checked
+      })
+      span.toggle__box
+      span.js-toggle-title.toggle__title #{title}
