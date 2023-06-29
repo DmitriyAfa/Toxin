@@ -7,6 +7,10 @@ mixin named-wrapper(props = {})
       expandable=false,
     } = props
 
+    const contentHideClass = expandable && 'named-wrapper__content_hide'
+
+    const contentClasses = [contentHideClass, 'js-named-wrapper__content']
+
   .named-wrapper.js-named-wrapper
     +column({
       gap: gap,
@@ -28,7 +32,7 @@ mixin named-wrapper(props = {})
         if expandable === true
           span.js-named-wrapper__button
             +button-expand()
-      .js-named-wrapper__content.named-wrapper__content.named-wrapper__content_hide
+      .named-wrapper__content(class=contentClasses)
         +column({
           gap: '10',
         })
