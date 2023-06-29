@@ -1,0 +1,12 @@
+.rating {
+  display: flex;
+  gap: 5px;
+
+  &__star::before {
+    content: url('./assets/icons/star.svg');
+  }
+
+  &__empty-star::before {
+    content: url('./assets/icons/star_border.svg');
+  }
+}

@@ -9,9 +9,7 @@
   cursor: pointer;
 
   &__text {
-    font-family: "Montserrat";
-    font-size: 10px;
-    font-weight: 400;
+    font: 400 10px Montserrat, Areal, sans-serif;
     line-height: 12px;
     letter-spacing: 0em;
 

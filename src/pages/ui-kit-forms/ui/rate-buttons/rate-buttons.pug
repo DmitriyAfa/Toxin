@@ -1,0 +1,26 @@
+mixin rate-buttons(props={})
+  -
+    const {
+      items=[
+        {
+          rating: 4,
+        },
+        {
+          rating: 5,
+        },
+      ],
+      title='rate button',
+      gap='20',
+    } = props;
+
+  .rate-buttons
+    +named-wrapper({
+      title: title,
+      gap: gap,
+      isContentRow: true,
+      contentGap: '20',
+    })
+      each item in items
+        +rating({
+          rating: item.rating,
+        })
