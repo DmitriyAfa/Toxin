@@ -13,7 +13,9 @@ include @/features/amenities-dropdown/index
 include @/features/guests-dropdown/index
 include @/features/text-field/index
 include @/entities/checkbox-list/index
+include @/entities/radio-buttons/index
 include @/features/date-dropdown/index
+include @/shared/ui/radio/index
 
 block variables
   - const title = 'Form elements'
@@ -29,6 +31,7 @@ block style
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/bullet/bullet.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/radio/radio.scss'))
   link(rel='stylesheet' href=require('@/entities/bullet-list/bullet-list.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/named-wrapper/named-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
@@ -41,13 +44,7 @@ block content
     align: "center",
     gap: '20',
   })
-    +column({
-      gap: '40',
-    })
-      +bullet-list()
-
-
-
+    +radio-buttons()
 
 
 block script

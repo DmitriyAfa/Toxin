@@ -1,0 +1,24 @@
+mixin radio-buttons(props={})
+  -
+    const {
+      items=[
+        { group: "gender", title: "Мужчина", checked: true },
+        { group: "gender", title: "Женщина", checked: false }
+      ],
+      title='radio buttons',
+      gap='16',
+    } = props;
+
+  .radio-buttons
+    +named-wrapper({
+      title: title,
+      gap: gap,
+      isContentRow: true,
+      contentGap: '20',
+    })
+      each item in items
+        +radio({
+          group: item.group,
+          title: item.title,
+          checked: item.checked,
+        })
