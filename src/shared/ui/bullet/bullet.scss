@@ -1,0 +1,12 @@
+.bullet {
+  margin-right: 10px;
+
+  &::before {
+    content: '';
+    display: block;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 50%;
+    background: var(--text-color-25);
+  }
+}

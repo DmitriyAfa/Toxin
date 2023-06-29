@@ -1,0 +1,14 @@
+.bullet-list {
+  width: 263px;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+  }
+}

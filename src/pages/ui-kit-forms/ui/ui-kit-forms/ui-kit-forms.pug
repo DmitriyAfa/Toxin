@@ -4,6 +4,8 @@ include @/shared/ui/form-wrapper/index
 include @/shared/ui/input/index
 include @/entities/dropdown/index
 include @/shared/ui/button/index
+include @/shared/ui/bullet/index
+include @/entities/bullet-list/index
 include @/shared/ui/checkbox/index
 include @/shared/ui/text/index
 include @/shared/ui/named-wrapper/index
@@ -26,6 +28,8 @@ block style
   link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/bullet/bullet.scss'))
+  link(rel='stylesheet' href=require('@/entities/bullet-list/bullet-list.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/named-wrapper/named-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/checkbox/checkbox.scss'))
@@ -40,7 +44,7 @@ block content
     +column({
       gap: '40',
     })
-      +rich-checkbox-buttons()
+      +bullet-list()
 
 
 
