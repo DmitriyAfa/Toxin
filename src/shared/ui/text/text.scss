@@ -66,6 +66,10 @@ h3.text {
     &_secondary {
       color: var(--secondary-color);
     }
+
+    &_white {
+      color: #fff;
+    }
   }
 
   &_min-width {
@@ -80,4 +84,16 @@ h3.text {
     }
   }
 
+  &_hovering-color {
+    &_gray {
+      &:hover {
+        color: var(--text-color-50);
+      }
+    }
+  }
+
+}
+
+h3.text_color_gray {
+  color: var(--text-color-50);
 }

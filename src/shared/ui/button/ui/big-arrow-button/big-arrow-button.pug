@@ -1,0 +1,16 @@
+mixin big-arrow-button(props={})
+  -
+    const {
+      text='click me',
+      size='medium',
+    } = props
+
+  +button({
+    variant: 'main',
+    size: 'biggest',
+    hasArrow: true,
+  })
+    +text({
+      h3: 'перейти к оплате',
+      color: 'white',
+    })

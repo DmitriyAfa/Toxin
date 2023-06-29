@@ -1,0 +1,15 @@
+mixin button-main(props={})
+  -
+    const {
+      text='click me',
+      size='medium',
+    } = props
+
+  +button({
+    variant: 'main',
+    size: 'medium',
+    })
+      +text({
+        h3: 'click me',
+        color: 'white',
+      })

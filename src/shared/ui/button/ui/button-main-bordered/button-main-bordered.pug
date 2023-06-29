@@ -1,0 +1,15 @@
+mixin button-main-bordered(props={})
+  -
+    const {
+      text='click me',
+      size='medium',
+    } = props
+
+  +button({
+    variant: 'main-bordered',
+    size: size,
+  })
+    +text({
+      h3: text,
+      color: 'primary',
+    })

@@ -1,5 +1,5 @@
 .button {
-  height: 100%;
+  height: var(--button-height);
   border-radius: var(--radius-smallest);
   position: relative;
   background: inherit;
@@ -10,7 +10,12 @@
     transition: transform 0.75s;
 
     &_arrow-right {
-      background-image: url(./assets/icons/arrow_forward.svg);
+      &::after {
+        content: url(./assets/icons/arrow_right.svg);
+        position: absolute;
+        right: 13px;
+        top: 14px;
+      }
     }
 
     &_expand {
@@ -94,7 +99,24 @@
           left: 11px;
         }
       }
+    }
 
+    &_main {
+      background: var(--primary-gradient);
+      border-radius: 23px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &_hovered {
+        opacity: 0.5;
+      }
+
+      &-bordered {
+        background: none;
+        border: 2px solid var(--primary-gradient);
+      }
     }
   }
 
@@ -107,11 +129,24 @@
     &_small {
       width: var(--button-size-small);
     }
+
+    &_medium {
+      width: var(--button-size-medium);
+    }
+
+    &_biggest {
+      width: var(--button-size-biggest);
+    }
   }
 
   &_visability {
     &_hidden {
       visibility: hidden;
     }
+  }
+
+  &_inline {
+    display: inline;
+    height: min-content;
   }
 }
