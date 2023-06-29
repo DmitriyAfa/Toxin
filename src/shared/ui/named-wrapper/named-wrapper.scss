@@ -1,3 +1,11 @@
 .named-wrapper {
-  width: 320px;
+  width: 100%;
+
+  &__content {
+    display: flex;
+
+    &_hide {
+      display: none;
+    }
+  }
 }

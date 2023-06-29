@@ -2,6 +2,7 @@
   height: 100%;
   border-radius: var(--radius-smallest);
   position: relative;
+  background: inherit;
 
   &_variant {
     background-repeat: no-repeat;

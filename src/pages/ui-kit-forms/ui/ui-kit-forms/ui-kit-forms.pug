@@ -10,6 +10,7 @@ include @/shared/ui/named-wrapper/index
 include @/features/amenities-dropdown/index
 include @/features/guests-dropdown/index
 include @/features/text-field/index
+include @/entities/checkbox-list/index
 include @/features/date-dropdown/index
 
 block variables
@@ -21,6 +22,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/form-wrapper/form-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/input/input.scss'))
   link(rel='stylesheet' href=require('@/features/text-field/text-field.scss'))
+  link(rel='stylesheet' href=require('@/entities/checkbox-list/checkbox-list.scss'))
   link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
@@ -38,16 +40,16 @@ block content
     +column({
       gap: '40',
     })
-      +checkbox({
-        title: 'Широкий каридор',
-        description: 'Ширина коридоров в номере не менее 91 см.',
-        isRich: true,
-      })
+      +expandable-checkbox-list()
+
+
+
 
 
 block script
   script(src=require("@/app/app"))
   script(src=require("@/shared/ui/button/index.js"))
+  script(src=require("@/shared/ui/named-wrapper/index.js"))
   script(src=require("@/entities/dropdown/dropdown"))
   script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
   script(src=require("@/features/guests-dropdown/guests-dropdown"))
