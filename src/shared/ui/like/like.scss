@@ -1,0 +1,50 @@
+.like {
+  min-width: 40px;
+  min-height: 20px;
+  padding: 1px;
+  background: var(--text-color-25);
+  border: none;
+  border-radius: var(--radius-medium);
+  outline: none;
+  cursor: pointer;
+
+  &__text {
+    font-family: "Montserrat";
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0em;
+
+    padding: 0 4px 0 4px;
+    color: var(--text-color-25);
+  }
+
+  &__icon {
+    padding: 0 2px 0 4px;
+
+    &::before {
+      content: url('./assets/icons/like.svg');
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    background: #fff;
+    border-radius: var(--radius-medium);
+    align-items: center;
+  }
+
+  &_active {
+    background: var(--primary-gradient);
+
+    & .like__icon::before {
+      content: url('./assets/icons/like-fill.svg');
+    }
+
+    & .like__text {
+      color: var(--primary-color);
+    }
+  }
+}

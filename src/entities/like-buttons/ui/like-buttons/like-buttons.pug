@@ -1,0 +1,28 @@
+mixin like-buttons(props={})
+  -
+    const {
+      items=[
+        {
+          value: 2,
+        },
+        {
+          value: 12,
+          active: true,
+        },
+      ],
+      title='like button',
+      gap='13',
+    } = props;
+
+  .like-buttons
+    +named-wrapper({
+      title: title,
+      gap: gap,
+      isContentRow: true,
+      contentGap: '10',
+    })
+      each item in items
+        +like({
+          value: item.value,
+          active: item.active,
+        })
