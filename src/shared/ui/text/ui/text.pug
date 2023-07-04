@@ -7,15 +7,17 @@ mixin text(props = {})
       text="",
       weight="bold",
       transform="",
-      color=null,
+      color='',
       minWidth=null,
       align="start",
+      hoveringColor='',
+      hovered=false,
     } = props
 
     const colors = [
       "darkest-gray", "dark-gray", "gray",
       "light-gray","lightest-gray",
-      "primary", "secondary"
+      "primary", "secondary", 'white',
       ]
     const minWidths = ['50']
     const alignVariants = ['end']
@@ -28,8 +30,13 @@ mixin text(props = {})
     const colorClass = colors.includes(color) && `text_color_${color}`
     const minWidthClass = minWidths.includes(minWidth) && `text_min-width_${minWidth}`
     const alignClass = alignVariants.includes(align) && `text_align_${align}`
+    const hoveringColorClass = colors.includes(hoveringColor) && `text_hovering-color_${hoveringColor}`
+    const hoveredClass = hovered && `text_color_${hoveringColor}`
 
-    const classes = [weightClass, transformClass, colorClass, minWidthClass, alignClass]
+    const classes = [
+      'js-text', weightClass, transformClass, colorClass,
+      minWidthClass, alignClass, hoveringColorClass, hoveredClass,
+      ]
 
   if h1 !== ""
     h1.text(class=classes)= h1

@@ -1,0 +1,24 @@
+mixin guests-dropdown()
+  +dropdown({
+    size: 'big',
+    variant: 'guests',
+    value: "Сколько гостей",
+    name: 'guests',
+    items: [
+      {
+        title: 'взрослые',
+        value: 0,
+        itemName: 'first',
+      },
+      {
+        title: 'дети',
+        value: 0,
+        itemName: 'second',
+      },
+      {
+        title: 'младенцы',
+        value: 0,
+        itemName: 'third',
+      },
+    ]
+})

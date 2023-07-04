@@ -1,7 +1,8 @@
 .button {
-  height: 100%;
+  height: var(--button-height);
   border-radius: var(--radius-smallest);
   position: relative;
+  background: inherit;
 
   &_variant {
     background-repeat: no-repeat;
@@ -9,7 +10,12 @@
     transition: transform 0.75s;
 
     &_arrow-right {
-      background-image: url(./assets/icons/arrow_forward.svg);
+      &::after {
+        content: url(./assets/icons/arrow_right.svg);
+        position: absolute;
+        right: 13px;
+        top: 14px;
+      }
     }
 
     &_expand {
@@ -38,6 +44,38 @@
         overflow: hidden;
       }
 
+      &_disabled {
+        cursor: default;
+
+        &::after {
+          border: var(--form-border-5);
+        }
+
+        &.button_variant_math-minus {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 7px;
+            background: linear-gradient(to bottom, transparent 56%, var(--text-color-5) 69%, var(--text-color-5) 80%, transparent 55%);
+            top: 11px;
+            left: 12px;
+          }
+        }
+
+        &.button_variant_math-plus {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            background: linear-gradient(to bottom, transparent 39%, var(--text-color-5) 45%, var(--text-color-5) 60%, transparent 58%), linear-gradient(to right, transparent 38%, var(--text-color-5) 43%, var(--text-color-5) 56%, transparent 67%);
+            top: 11px;
+            left: 11px;
+          }
+        }
+      }
+
       &-minus {
         &::before {
           content: '';
@@ -62,6 +100,24 @@
         }
       }
     }
+
+    &_main {
+      background: var(--primary-gradient);
+      border-radius: 23px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+
+      &_hovered {
+        opacity: 0.5;
+      }
+
+      &-bordered {
+        background: none;
+        border: 2px solid var(--primary-gradient);
+      }
+    }
   }
 
   &_size {
@@ -73,5 +129,24 @@
     &_small {
       width: var(--button-size-small);
     }
+
+    &_medium {
+      width: var(--button-size-medium);
+    }
+
+    &_biggest {
+      width: var(--button-size-biggest);
+    }
+  }
+
+  &_visability {
+    &_hidden {
+      visibility: hidden;
+    }
+  }
+
+  &_inline {
+    display: inline;
+    height: min-content;
   }
 }

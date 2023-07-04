@@ -1,0 +1,24 @@
+mixin checkbox-list(props={})
+  -
+    const {
+      items=[],
+      title='',
+      subtitle=undefined,
+      expandable=false,
+      gap='16',
+    } = props;
+
+  .checkbox-list
+    +named-wrapper({
+      title: title,
+      subtitle: subtitle,
+      expandable: expandable,
+      gap: gap,
+    })
+      each item in items
+        +checkbox({
+          title: item.title,
+          description: item.description,
+          isRich: item.isRich,
+          checked: item.checked,
+        })

@@ -1,0 +1,49 @@
+mixin named-wrapper(props = {})
+  -
+    const {
+      title='',
+      subtitle=undefined,
+      gap='',
+      expandable=false,
+      isContentRow=false,
+      contentGap='10',
+      isWidthAuto=false,
+    } = props
+
+    const widthClass = isWidthAuto && 'named-wrapper_width_auto';
+
+    const contentHideClass = expandable && 'named-wrapper__content_hide'
+    const contentClasses = [contentHideClass, 'js-named-wrapper__content']
+
+  .named-wrapper.js-named-wrapper(class=widthClass)
+    +column({
+      gap: gap,
+    })
+      +row({
+        justify: 'between',
+        align: 'center',
+        width: '100',
+      })
+        +text({
+          h3: title,
+        })
+        if subtitle !== undefined && expandable === false
+          +text({
+          h3: subtitle,
+          weight: 'normal',
+          color: 'gray',
+          })
+        if expandable === true
+          span.js-named-wrapper__button
+            +button-expand()
+      .named-wrapper__content(class=contentClasses)
+        if !isContentRow === true
+          +column({
+            gap: contentGap,
+          })
+            block
+        else
+          +row({
+            gap: contentGap,
+            })
+              block

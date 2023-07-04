@@ -1,0 +1,22 @@
+mixin toggles(props={})
+  -
+    const {
+      items=[
+        { title: "Получать спецпредложения", checked: true },
+        { title: "Получать спецпредложения", checked: false },
+      ],
+      title='toggle',
+      gap='16',
+    } = props;
+
+  .toggles
+    +named-wrapper({
+      title: title,
+      gap: gap,
+      contentGap: '13',
+    })
+      each item in items
+        +toggle({
+          title: item.title,
+          checked: item.checked,
+        })

@@ -1,0 +1,25 @@
+mixin checkbox (props = {})
+  -
+    const {
+      title="title",
+      description="",
+      isRich=false,
+      checked=false,
+    } = props
+
+    const descriptionClass = "checkbox__description"
+    const titleRichClass = isRich && 'checkbox__title_rich'
+
+  label.checkbox
+    .checkbox__container
+      input&attributes({
+        class: "checkbox__input",
+        type: "checkbox",
+        title: title,
+        checked: checked,
+      })
+      span.checkbox__box
+      .checkbox__content
+        p.checkbox__title&attributes({class: [titleRichClass]}) #{title}
+        if isRich
+          p.checkbox__description #{description}

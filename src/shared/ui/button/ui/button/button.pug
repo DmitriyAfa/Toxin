@@ -1,25 +1,39 @@
 mixin button(props={})
   -
     const {
-      variant="arrow-right",
-      name="",
+      variant="",
       type="",
-      size="small"
+      size="",
+      disabled=false,
+      visability=true,
+      name="",
+      isInline=false,
+      hasArrow=false,
     } = props
 
     const mathVariants = ['minus', 'plus']
-    const buttonVariants = ['arrow-right', 'expand', ...mathVariants,]
+    const mainBorderedCLasses = variant === 'main-bordered' ? 'button_variant_main button_variant_main-bordered' : ''
+    const buttonVariants = ['arrow-right', 'expand', ...mathVariants, 'main',]
+    const hasArrowClass = hasArrow && 'button_variant button_variant_arrow-right'
+    function isMathVariant (variants, variant) {
+      return variants.includes(variant)
+    }
     function makeVariantClass(variant) {
-      if(mathVariants.includes(variant)) {
-        return `button_variant_math button_variant_math-${variant}`
+      if(isMathVariant(mathVariants, variant)) {
+        return `button_variant_math button_variant_math-${variant} js-button_variant_math-${variant}`
       }
-      return buttonVariants.includes(variant) && `button_variant button_variant_${variant}`
+
+      return buttonVariants.includes(variant) && `button_variant button_variant_${variant} js-button_variant_${variant}`
     }
     const variantClass = makeVariantClass(variant)
 
-    const sizes = ['smallest', 'small']
+    const sizes = ['smallest', 'small', 'medium', 'biggest',]
     const sizeClass = sizes.includes(size) && `button_size_${size}`
 
+    const mathDisabledClass = disabled && isMathVariant(mathVariants, variant) && 'button_variant_math_disabled' 
+
+    const visabilityClass = !visability && 'button_visability_hidden'
+    const inlineCLass= isInline && 'button_inline'
 
   button&attributes({
     class: [
@@ -27,8 +41,14 @@ mixin button(props={})
       'js-button',
       sizeClass,
       variantClass,
+      mathDisabledClass,
+      visabilityClass,
+      mainBorderedCLasses,
+      inlineCLass,
+      hasArrowClass,
     ],
     type: type,
-    name: name,
+    'data-name': name,
   })
+    block
 

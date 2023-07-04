@@ -1,4 +1,8 @@
 :root {
+  //fonts
+  --font-h2: 700 19px Montserrat, Areal, sans-serif;
+  --font-h3: 700 12px Montserrat, Areal, sans-serif;
+
   // radius
   --radius-smallest: 4px;
   --radius-small: 6px;
@@ -6,6 +10,8 @@
   --top-radius-smallest: var(--radius-smallest) var(--radius-smallest) 0 0;
   --bottom-radius-smallest: 0 0 var(--radius-smallest) var(--radius-smallest);
 
+  // z-index
+  --z-index-medium: 10;
 
   // colors
   --bg-color: #fff;
@@ -18,8 +24,17 @@
   --primary-color: #bc9cff;
   --secondary-color: #6fcf97;
 
-  // input
+  --primary-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --primary-gradient-transparent-25: linear-gradient(180deg,
+      rgba(#bc9cff, 0.25) 0%,
+      rgba(#8ba4f9, 0.25) 100%);
+
+  --second-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+  // forms
+  --form-border-50: 1px solid var(--text-color-50);
   --form-border: 1px solid var(--text-color-25);
+  --form-border-5: 1px solid var(--text-color-5);
   --form-border-focused: 1px solid var(--text-color-50);
 
   --input-width-biggest: 320px;
@@ -28,10 +43,15 @@
   --input-width-small: 106px;
   --form-height: 44px;
 
-  --form-padding: 13px 15px;
+  --form-padding: 13px 0 13px 15px;
 
   // button
   --button-size-smallest: 30px;
   --button-size-small: 44px;
+  --button-size-medium: 99px;
+  --button-size-biggest: 320px;
+  --button-height: 44px;
 
+  // range
+  --range-width: 266px;
 }

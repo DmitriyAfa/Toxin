@@ -17,6 +17,10 @@
     &_around {
       justify-content: space-around;
     }
+
+    &_between {
+      justify-content: space-between;
+    }
   }
 
   &_align {
@@ -44,8 +48,25 @@
   }
 
   &_gap {
+
+    &_10 {
+      gap: 10px;
+    }
+
+    &_13 {
+      gap: 13px;
+    }
+
+    &_16 {
+      gap: 16px;
+    }
+
     &_20 {
       gap: 20px;
+    }
+
+    &_22 {
+      gap: 22px;
     }
 
     &_30 {
@@ -62,6 +83,10 @@
   }
 
   &_width {
+    &_100 {
+      width: 100%;
+    }
+
     &_69 {
       width: 69%;
     }

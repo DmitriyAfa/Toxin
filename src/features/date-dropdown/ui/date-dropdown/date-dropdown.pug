@@ -1,0 +1,34 @@
+mixin date-dropdown(props = {})
+  -
+    const {
+      variant='date',
+    } = props;
+
+    const classes = ['js-date-dropdown',]
+
+  .date-dropodown&attributes({
+    class: [
+      classes,
+    ],
+    'data-name': variant,
+    })
+    if variant === 'date'
+      +flex({
+        gap: '20',
+      })
+        +dropdown({
+          size: 'small',
+          name: 'start',
+          placeholder: 'ДД.ММ.ГГГГ',
+        })
+        +dropdown({
+          size: 'small',
+          name: 'end',
+          placeholder: 'ДД.ММ.ГГГГ',
+        })
+    if variant === 'filter'
+      +dropdown({
+        size: 'medium',
+        name: 'filter',
+        placeholder: 'ДД.ММ.ГГГГ',
+        })

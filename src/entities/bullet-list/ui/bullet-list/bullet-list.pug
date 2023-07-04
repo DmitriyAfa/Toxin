@@ -1,0 +1,30 @@
+mixin bullet-list(props={})
+  -
+    const {
+      items=[
+        {
+          text: 'Нельзя с питомцами',
+        },
+        {
+          text: 'Без вечеринок и мероприятий',
+        },
+        {
+          text: 'Время прибытия — после 13:00, а выезд до 12:00',
+        },
+      ],
+      title='bullet list',
+      gap='13',
+    } = props;
+
+  .bullet-list
+    +named-wrapper({
+      title: title,
+      gap: gap,
+    })
+      ul.bullet-list__items
+        each item in items
+          li.bullet-list__item
+            +bullet()
+            +text({
+              text: item.text
+            })

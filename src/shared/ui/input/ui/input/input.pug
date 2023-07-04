@@ -2,25 +2,31 @@ mixin input (props = {})
   -
     const {
       type="text",
-      placeholder="Email",
-      value=null,
+      placeholder="",
+      value=undefined,
       size="biggest",
-      readonly=false
+      readonly=false,
+      ...otherProps
     } = props
 
-    const inputSizes = ["biggest", "big", "medium"]
+
+    const inputSizes = ['small', "big", "medium", "biggest",]
 
     const inputSizeClass = inputSizes.includes(size) && `input_size_${size}`
+    const readonlyClass = readonly && 'input_readonly'
 
     const inputAttributes = {
       class: [
         "input",
+        'js-input',
         inputSizeClass,
+        readonlyClass,
       ],
       type: type,
       placeholder: placeholder,
       value: value,
       readonly: readonly,
+      ...otherProps,
     }
 
   input&attributes(inputAttributes)

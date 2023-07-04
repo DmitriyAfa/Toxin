@@ -4,12 +4,12 @@ h1.text {
 }
 
 h2.text {
-  font: 700 19px Montserrat, Areal, sans-serif;
+  font: var(--font-h2);
   line-height: 23px;
 }
 
 h3.text {
-  font: 700 12px Montserrat, Areal, sans-serif;
+  font: var(--font-h3);
   line-height: 15px;
   text-transform: uppercase;
 }
@@ -18,7 +18,7 @@ p.text {
   line-height: 24px;
 }
 
-.text,
+p.text,
 h1.text,
 h2.text,
 h3.text {
@@ -66,6 +66,10 @@ h3.text {
     &_secondary {
       color: var(--secondary-color);
     }
+
+    &_white {
+      color: #fff;
+    }
   }
 
   &_min-width {
@@ -79,4 +83,17 @@ h3.text {
       text-align: end;
     }
   }
+
+  &_hovering-color {
+    &_gray {
+      &:hover {
+        color: var(--text-color-50);
+      }
+    }
+  }
+
+}
+
+h3.text_color_gray {
+  color: var(--text-color-50);
 }

@@ -1,0 +1,29 @@
+mixin dropdown-item (props = {})
+  -
+    const {
+      title="спальни",
+      value=0,
+      itemName='',
+    } = props;
+
+    const minusDisabled = value <= 0
+
+  li.dropdown__item.js-dropdown__item&attributes({
+    'data-name': itemName,
+  })
+    +text({
+      h3: title,
+      })
+    .dropdown__counter.js-dropdown__counter
+      +button({
+        size: 'smallest',
+        variant: 'minus',
+        disabled: minusDisabled,
+      })
+      +text({
+        h3: value,
+      })
+      +button({
+        size: 'smallest',
+        variant: 'plus',
+      })
