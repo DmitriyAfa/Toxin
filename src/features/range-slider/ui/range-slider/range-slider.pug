@@ -1,0 +1,29 @@
+mixin range-slider(props={})
+  -
+    const {
+      title="range slider",
+      options={},
+    } = props;
+    const {
+      min=0,
+      max=15000,
+      start=5000,
+      end=10000,
+    } = options;
+
+  +named-wrapper({
+    title: title,
+    gap: '22',
+    isWidthAuto: true,
+    })
+    .range-slider.js-range-slider&attributes({
+      'data-min': min,
+      'data-max': max,
+    })
+      .js-range-slider__output.range-slider__output
+        .js-number.number
+          p.js-start #{start}
+          p.p &#8381; - 
+        .js-number.number
+          p.js-end #{end}
+          p.p &#8381;

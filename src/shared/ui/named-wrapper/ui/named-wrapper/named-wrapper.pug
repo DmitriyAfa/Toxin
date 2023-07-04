@@ -7,13 +7,15 @@ mixin named-wrapper(props = {})
       expandable=false,
       isContentRow=false,
       contentGap='10',
+      isWidthAuto=false,
     } = props
 
-    const contentHideClass = expandable && 'named-wrapper__content_hide'
+    const widthClass = isWidthAuto && 'named-wrapper_width_auto';
 
+    const contentHideClass = expandable && 'named-wrapper__content_hide'
     const contentClasses = [contentHideClass, 'js-named-wrapper__content']
 
-  .named-wrapper.js-named-wrapper
+  .named-wrapper.js-named-wrapper(class=widthClass)
     +column({
       gap: gap,
     })

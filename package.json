@@ -20,6 +20,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
-    "air-datepicker": "^3.3.5"
+    "air-datepicker": "^3.3.5",
+    "nouislider": "^15.7.1"
   }
 }

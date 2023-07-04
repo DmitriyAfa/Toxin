@@ -1,4 +1,4 @@
-import { makeLike } from "./Like";
+import { makeLike } from "./like";
 
 const likeButtons = document.querySelectorAll('.js-like');
 

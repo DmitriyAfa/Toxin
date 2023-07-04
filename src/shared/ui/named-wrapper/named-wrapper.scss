@@ -1,6 +1,12 @@
 .named-wrapper {
   width: 100%;
 
+  &_width {
+    &_auto {
+      width: auto;
+    }
+  }
+
   &__content {
     display: flex;
 

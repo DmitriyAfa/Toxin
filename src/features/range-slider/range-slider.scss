@@ -1,0 +1,55 @@
+.range-slider {
+  width: var(--range-width);
+  position: relative;
+
+  &__output {
+    display: flex;
+    position: absolute;
+    bottom: 27px;
+    right: 0;
+
+    .number {
+      display: flex;
+      font: var(--font-h3);
+      line-height: 15px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: var(--text-color-50);
+
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &.noUi-target {
+    border: var(--form-border);
+    border-radius: 6px;
+    height: 6px;
+    background: none;
+  }
+
+  .noUi-base {
+    .noUi-handle {
+      background: var(--second-gradient);
+      border: 2px solid #fff;
+      border-radius: 100%;
+      cursor: pointer;
+      box-shadow: none;
+      box-sizing: content-box;
+
+      width: 12px;
+      height: 12px;
+      right: -5px;
+      top: -5.5px;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

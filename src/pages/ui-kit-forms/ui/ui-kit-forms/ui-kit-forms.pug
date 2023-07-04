@@ -22,6 +22,7 @@ include @/shared/ui/like/index
 include @/shared/ui/rating/index
 include @/entities/like-buttons/index
 include ../rate-buttons/rate-buttons
+include @/features/range-slider/index
 
 block variables
   - const title = 'Form elements'
@@ -32,6 +33,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/form-wrapper/form-wrapper.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/input/input.scss'))
   link(rel='stylesheet' href=require('@/features/text-field/text-field.scss'))
+  link(rel='stylesheet' href=require('@/features/range-slider/range-slider.scss'))
   link(rel='stylesheet' href=require('@/entities/checkbox-list/checkbox-list.scss'))
   link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
   link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
@@ -44,6 +46,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/checkbox/checkbox.scss'))
   link(rel='stylesheet' href=require('air-datepicker/air-datepicker.css'))
+  link(rel='stylesheet' href=require('nouislider/dist/nouislider.css'))
   link(rel='stylesheet' href=require('@/shared/ui/like/like.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/rating/rating.scss'))
 
@@ -53,7 +56,7 @@ block content
     align: "center",
     gap: '20',
   })
-    +big-arrow-button()
+    +range-slider()
 
 block script
   script(src=require("@/app/app"))
@@ -64,3 +67,4 @@ block script
   script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
   script(src=require("@/features/guests-dropdown/guests-dropdown"))
   script(src=require("@/features/date-dropdown/date-dropdown"))
+  script(src=require("@/features/range-slider/index.js"))
