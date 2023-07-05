@@ -1,0 +1,17 @@
+mixin pagination(props={})
+  -
+    const { 
+      variant='working',
+    } = props;
+    const paginationsClasses = ['js-pagination']
+
+  .pagination-component&attributes({
+    class: paginationsClasses,
+    'data-variant': variant,
+  })
+    .pagination__container.js-pagination__container
+      .data-container.js-data-container
+        ul.list-cards.js-list-cards
+    .js-paging-container.paging-container
+    .js-dimmer.dimmer
+      .js-loader.loader

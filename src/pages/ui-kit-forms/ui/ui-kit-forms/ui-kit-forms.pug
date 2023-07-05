@@ -23,6 +23,7 @@ include @/shared/ui/rating/index
 include @/entities/like-buttons/index
 include ../rate-buttons/rate-buttons
 include @/features/range-slider/index
+include @/features/pagination/index
 
 block variables
   - const title = 'Form elements'
@@ -46,9 +47,11 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/checkbox/checkbox.scss'))
   link(rel='stylesheet' href=require('air-datepicker/air-datepicker.css'))
+  link(rel='stylesheet' href=require('pagination-system/dist/pagination-system.min.css'))
   link(rel='stylesheet' href=require('nouislider/dist/nouislider.css'))
   link(rel='stylesheet' href=require('@/shared/ui/like/like.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/rating/rating.scss'))
+  link(rel='stylesheet' href=require('@/features/pagination/pagination.scss'))
 
 block content
   +row({
@@ -56,7 +59,9 @@ block content
     align: "center",
     gap: '20',
   })
-    +range-slider()
+    +pagination({
+      variant: 'example',
+    })
 
 block script
   script(src=require("@/app/app"))
@@ -68,3 +73,4 @@ block script
   script(src=require("@/features/guests-dropdown/guests-dropdown"))
   script(src=require("@/features/date-dropdown/date-dropdown"))
   script(src=require("@/features/range-slider/index.js"))
+  script(src=require("@/features/pagination/index.js"))
