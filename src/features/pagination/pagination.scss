@@ -1,6 +1,11 @@
 .pagination-component {
 
   .pagination {
+    &__description {
+      text-align: center;
+      color: var(--text-color-75);
+    }
+
     .dg-number-pages {
 
       button {

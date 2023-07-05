@@ -6,8 +6,6 @@ function makePagination(item) {
 
   const variant = item.dataset.variant
 
-  console.log(variant)
-
   const dataRenderFn = (dataPage) => {
 
     if (variant === 'example') {
@@ -42,14 +40,15 @@ function makePagination(item) {
       limit: '_limit',
       pageNumber: '_page',
     },
-    dimmerSelector: 'js-dimmer',
     pagingContainer: pagingContainer,
     perPage: 10,
     isShowPerPage: false,
     countRecords: 100,
   };
 
-  new PaginationSystem(options);
+  const myPagination = new PaginationSystem(options);
+
+  console.log(myPagination)
 }
 
 export { makePagination }
