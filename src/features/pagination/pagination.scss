@@ -1,13 +1,8 @@
 .pagination-component {
 
   .pagination {
-    &__description {
-      text-align: center;
-      color: var(--text-color-75);
-    }
 
     .dg-number-pages {
-
       button {
         border-radius: 100%;
         width: 40px;
@@ -34,6 +29,11 @@
         }
 
       }
+    }
+
+    &__description {
+      text-align: center;
+      color: var(--text-color-75);
     }
   }
 }

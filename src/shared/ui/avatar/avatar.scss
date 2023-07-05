@@ -1,0 +1,42 @@
+.avatar {
+  display: flex;
+  gap: 13px;
+  min-width: 280px;
+  border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+  padding-bottom: 20px;
+
+  &_none-lined {
+    border: none;
+    gap: 10px;
+
+    .avatar__icon {
+      width: 47.5px;
+      height: 48px;
+      border-radius: 100%;
+    }
+
+    .avatar__content {
+      gap: 4px;
+      padding-top: 3px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    p {
+      line-height: 24px;
+      color: var(--text-color-75);
+    }
+
+    .title {
+      font: 700 14px Montserrat, Areal, sans-serif;
+    }
+
+    .subtitle {
+      font: 400 14px Montserrat, Areal, sans-serif;
+    }
+  }
+}
