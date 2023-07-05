@@ -1,0 +1,24 @@
+mixin avatar(props={})
+  -
+    const {
+      title='Комфорт',
+      description='Шумопоглощающие стены',
+      imgName='comfort.svg',
+      pageName="ui-kit-forms",
+      isLined=false,
+    } = props
+
+    const srcVariants = {
+      "ui-kit-forms": `@/pages/ui-kit-forms/assets/icons/${imgName}`,
+    }
+
+    const linedClass= !isLined && 'avatar_none-lined'
+
+  .avatar(class=linedClass)
+    img.avatar__icon&attributes({
+      src: require(srcVariants[pageName]),
+      alt: "avatar",
+      })
+    .avatar__content
+      p.title #{title}
+      p.description #{description}

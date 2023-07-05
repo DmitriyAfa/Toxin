@@ -1,0 +1,97 @@
+.pagination-component {
+
+  .pagination {
+
+    .dg-number-pages {
+      button {
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+
+        font: 400 12px Montserrat, Areal, sans-serif;
+        color: var(--text-color-50);
+
+
+        border: none;
+
+        &.active {
+          background: var(--primary-gradient);
+          font-weight: 700;
+          color: #fff;
+        }
+
+        &:not(.active) {
+          &:hover {
+            background: linear-gradient(180deg,
+                rgba(#bc9cff, 0.25) 0%,
+                rgba(#8ba4f9, 0.25) 100%);
+          }
+        }
+
+      }
+    }
+
+    &__description {
+      text-align: center;
+      color: var(--text-color-75);
+    }
+  }
+}
+
+.pagination button[data-index=next] {
+  position: relative;
+  width: 0;
+  height: 0;
+  top: -6px;
+  left: -16px;
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: var(--second-gradient);
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  &::after {
+    content: url(./assets/icons/arrow_right.svg);
+
+    position: absolute;
+    top: 10px;
+    right: -12px;
+
+  }
+}
+
+.pagination button[data-index=prev] {
+  position: relative;
+  width: 0;
+  height: 0;
+  top: -6px;
+  right: 25px;
+
+  &:disabled {
+    visibility: hidden;
+  }
+
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: var(--second-gradient);
+    position: absolute;
+    border-radius: 100%;
+  }
+
+  &::after {
+    content: url(./assets/icons/arrow_right.svg);
+
+    position: absolute;
+    top: 10px;
+    right: -12px;
+
+    transform: rotate(180deg);
+
+  }
+}
