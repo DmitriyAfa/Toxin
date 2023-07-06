@@ -7,13 +7,14 @@ mixin button(props={})
       disabled=false,
       visability=true,
       name="",
-      isInline=false,
+      isSimple=false,
       hasArrow=false,
+      hovered=false,
     } = props
 
     const mathVariants = ['minus', 'plus']
     const mainBorderedCLasses = variant === 'main-bordered' ? 'button_variant_main button_variant_main-bordered' : ''
-    const buttonVariants = ['arrow-right', 'arrow-right_primary', 'expand', ...mathVariants, 'main',]
+    const buttonVariants = ['arrow-right', 'arrow-right_primary', 'expand', ...mathVariants, 'main', 'simple',]
     const hasArrowClass = hasArrow && 'button_variant button_variant_arrow-right'
     function isMathVariant (variants, variant) {
       return variants.includes(variant)
@@ -33,7 +34,7 @@ mixin button(props={})
     const mathDisabledClass = disabled && isMathVariant(mathVariants, variant) && 'button_variant_math_disabled' 
 
     const visabilityClass = !visability && 'button_visability_hidden'
-    const inlineCLass= isInline && 'button_inline'
+    const hoveredClass= hovered && 'button_hovered'
 
   button&attributes({
     class: [
@@ -44,8 +45,8 @@ mixin button(props={})
       mathDisabledClass,
       visabilityClass,
       mainBorderedCLasses,
-      inlineCLass,
       hasArrowClass,
+      hoveredClass,
     ],
     type: type,
     'data-name': name,

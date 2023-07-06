@@ -119,15 +119,19 @@
         opacity: 0.5;
       }
 
-      &_hovered {
-        opacity: 0.5;
-      }
-
       &-bordered {
         background: none;
-        border: 2px solid var(--primary-gradient);
+        border: 2px solid var(--primary-color);
       }
     }
+
+    &_simple {
+      display: contents;
+    }
+  }
+
+  &_hovered {
+    opacity: 0.5;
   }
 
   &_size {
@@ -155,8 +159,4 @@
     }
   }
 
-  &_inline {
-    display: inline;
-    height: min-content;
-  }
 }

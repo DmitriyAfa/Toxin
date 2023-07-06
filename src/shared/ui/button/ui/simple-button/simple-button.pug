@@ -2,14 +2,15 @@ mixin simple-button(props={})
   -
     const {
       text='click me',
-      size='medium',
       hovered=false,
       hoveringColor='gray',
       color='primary',
     } = props
 
   +button({
-    isInline: true,
+    hovered: hovered,
+    variant: 'simple',
+    size: undefined,
   })
     +text({
       h3: text,

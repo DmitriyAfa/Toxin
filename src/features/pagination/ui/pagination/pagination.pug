@@ -4,10 +4,12 @@ mixin pagination(props={})
       variant='working',
     } = props;
     const paginationsClasses = ['js-pagination']
+    const variants = ['working', 'example']
+    const paginationVariant = variants.includes(variant) && variant
 
   .pagination-component&attributes({
     class: paginationsClasses,
-    'data-variant': variant,
+    'data-variant': paginationVariant,
   })
     .pagination__container.js-pagination__container
       .data-container.js-data-container

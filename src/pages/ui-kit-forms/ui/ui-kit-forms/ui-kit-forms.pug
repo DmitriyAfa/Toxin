@@ -58,8 +58,10 @@ block style
 
 block content
   .ui-kit-forms
-    +row()
-      +column()
+    +column()
+      +row({
+        gap: '123',
+      })
         +column({
           gap: '20',
         })
@@ -72,20 +74,100 @@ block content
             subtitle: 'hover/focus',
           })
           +guests-dropdown()
-          +text-field({
+          .ui-kit-forms__masked-text-field
+            +text-field({
             placeholder: 'ДД.ММ.ГГГГ',
             title: 'masked text field',
-          })
-          +date-dropdown()
-          +date-dropdown({
-            variant: 'filter',
-          })
-          +text-field({
-            type: 'email',
-            variant: 'subscribtion',
-            title: 'subscribtion text field',
-            size: 'medium',
-          })
+            })
+          .ui-kit-forms__date-dropdown
+            +date-dropdown()
+          .ui-kit-forms__filter-date-dropdown
+            +date-dropdown({
+              variant: 'filter',
+            })
+          .ui-kit-forms__subscribtion-text-field
+            +text-field({
+              type: 'email',
+              variant: 'subscribtion',
+              title: 'subscribtion text field',
+              size: 'medium',
+            })
+        +column({
+          gap: '40',
+        })
+          .ui-kit-forms__checkbox-buttons
+            +checkbox-list({
+              title: 'checkbox buttons',
+              items:[
+                {
+                  title: 'Можно курить',
+                },
+                {
+                  title: 'Можно c питомцами',
+                  checked: true,
+                },
+                {
+                  title: 'Можно пригласить гостей (до 10 человек)',
+                    checked: true,
+                },
+              ],
+            })
+          .ui-kit-forms__radio-buttons
+            +radio-buttons()
+          .ui-kit-forms__toggle-list
+            +named-wrapper({
+              title: 'toggle',
+              gap: '16',
+              contentGap: '15',
+            })
+              +toggle({
+                title: 'Получать cпецпредложения',
+                checked: true,
+              })
+              +toggle({
+                title: 'Получать cпецпредложения',
+              })
+          .ui-kit-forms__like-buttons
+            +like-buttons()
+          +rate-buttons()
+        +column({
+          gap: '40',
+          paddingLeft: '9',
+        })
+          +range-slider()
+          .ui-kit-forms__buttons
+            +named-wrapper({
+              title: 'buttons',
+              gap: '16',
+            })
+            .ui-kit-forms__buttons-example
+              +button-main()
+              +button-main({
+                hovered: true,
+              })
+            .ui-kit-forms__buttons-example
+              +button-main-bordered()
+              +button-main-bordered({
+                hovered: true,
+              })
+            .ui-kit-forms__buttons-example
+              +simple-button()
+              +simple-button({
+                hovered: true,
+              })
+            .ui-kit-forms__buttons-example
+              +big-arrow-button()
+            .ui-kit-forms__pagination
+              +named-wrapper({
+                title: 'pagination',
+                gap: '10',
+              })
+                +pagination({
+                  variant: 'example',
+                })
+      +row()
+      +row()
+      +row()
 
 
 block script

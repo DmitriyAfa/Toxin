@@ -6,11 +6,13 @@ mixin flex(props = {})
       direction="row",
       gap='10',
       width="",
+      paddingLeft=undefined,
     } = props
 
-    const gaps = ["5", "10", "13", "16", "20", "22", "30", "40", "50",]
+    const gaps = ["5", "10", "11", "13", "15", "16", "20", "22", "30", "40", "50", '123',]
     const widths = ["59", "69", "100"]
     const justifyVariants = ["start", "center", "end", "around", "between"]
+    const paddingsLeft = ['9']
 
   -
     const justifyClass = justifyVariants.includes(justify) && `flex_justify_${justify}`
@@ -26,7 +28,9 @@ mixin flex(props = {})
     const gapClass = gaps.includes(gap) && `flex_gap_${gap}`
     const widthClass = widths.includes(width) && `flex_width_${width}`
 
-    const classes = [justifyClass, alignClass, directionClass, gapClass, widthClass, fontSizeClass]
+    const paddingLeftClass = paddingsLeft.includes(paddingLeft) && `flex_padding_left_${paddingLeft}`
+
+    const classes = [justifyClass, alignClass, directionClass, gapClass, widthClass, fontSizeClass, paddingLeftClass,]
 
   .flex(class=classes)
     block
