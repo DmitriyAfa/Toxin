@@ -5,12 +5,14 @@ mixin simple-button(props={})
       hovered=false,
       hoveringColor='gray',
       color='primary',
+      name=undefined,
     } = props
 
   +button({
     hovered: hovered,
     variant: 'simple',
     size: undefined,
+    name: name,
   })
     +text({
       h3: text,

@@ -1,23 +1,36 @@
-mixin amenities-dropdown()
+mixin amenities-dropdown(props={})
+  -
+    const {
+      title='dropdown',
+      subtitle=undefined,
+      items=[
+        {
+          title: 'спальни',
+          value: 0,
+          itemName: 'first',
+        },
+        {
+          title: 'кровати',
+          value: 0,
+          itemName: 'second',
+        },
+        {
+          title: 'ванные комнаты',
+          value: 0,
+          itemName: 'third',
+        },
+      ],
+      expanded=false,
+      hidden=true,
+    }=props;
+
   +dropdown({
+    title: title,
+    subtitle: subtitle,
     size: 'medium',
     value: "Выберите удобства",
     name: 'amenities',
-    items: [
-      {
-        title: 'спальни',
-        value: 0,
-        itemName: 'first',
-      },
-      {
-        title: 'кровати',
-        value: 0,
-        itemName: 'second',
-      },
-      {
-        title: 'ванные комнаты',
-        value: 0,
-        itemName: 'third',
-      },
-    ]
+    items: items,
+    expanded: expanded,
+    hidden: hidden,
 })

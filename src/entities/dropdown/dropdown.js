@@ -23,6 +23,11 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
     }
     expandBtn.addEventListener('click', handleExpandBtn)
 
+    const expandBtnFromShared = expandBtn.querySelector('.js-button_variant_expand')
+    if (!drop.classList.contains('dropdown__drop_hidden')) {
+      expandBtnFromShared.classList.toggle('button_variant_expand-up')
+    }
+
     let state = {
       first: 0,
       second: 0,
@@ -34,6 +39,21 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
     let clearBtnClassList;
     let items = drop.querySelectorAll('.js-dropdown__item');
     items = [...items]
+
+    items.forEach((item) => {
+      if (item.dataset.name === 'first') {
+        state.first = +item.dataset.value
+      }
+      if (item.dataset.name === 'second') {
+        state.second = +item.dataset.value
+      }
+      if (item.dataset.name === 'third') {
+        state.third = +item.dataset.value
+      }
+    })
+
+    const text = makeInputTextCallback(state)
+    input.value = text;
 
     if (name === 'guests') {
       footer = drop.querySelector('.js-dropdown__footer')

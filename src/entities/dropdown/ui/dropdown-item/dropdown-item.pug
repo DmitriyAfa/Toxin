@@ -10,6 +10,7 @@ mixin dropdown-item (props = {})
 
   li.dropdown__item.js-dropdown__item&attributes({
     'data-name': itemName,
+    'data-value': value,
   })
     +text({
       h3: title,

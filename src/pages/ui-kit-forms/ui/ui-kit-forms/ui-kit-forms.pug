@@ -166,6 +166,63 @@ block content
                   variant: 'example',
                 })
       +row()
+        .ui-kit-forms__dropdowns
+          +row({
+            gap: '178',
+          })
+            +column({
+              gap: '20',
+            })
+              +amenities-dropdown({
+                subtitle: 'default',
+              })
+              +amenities-dropdown({
+                subtitle: 'expanded',
+                expanded: true,
+                items: [
+                  {
+                    title: 'спальни',
+                    value: 2,
+                    itemName: 'first',
+                  },
+                  {
+                    title: 'кровати',
+                    value: 2,
+                    itemName: 'second',
+                  },
+                  {
+                    title: 'ванные комнаты',
+                    value: 0,
+                    itemName: 'third',
+                  },
+                ],
+                hidden: false,
+              })
+            +row({
+              gap: '71',
+            })
+              +guests-dropdown()
+              +guests-dropdown({
+                expanded: true,
+                items: [
+                  {
+                    title: 'взрослые',
+                    value: 2,
+                    itemName: 'first',
+                  },
+                  {
+                    title: 'дети',
+                    value: 1,
+                    itemName: 'second',
+                  },
+                  {
+                    title: 'младенцы',
+                    value: 0,
+                    itemName: 'third',
+                  },
+                ],
+                hidden: false,
+              })
       +row()
       +row()
 

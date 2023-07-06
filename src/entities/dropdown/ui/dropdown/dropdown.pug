@@ -59,16 +59,10 @@ mixin dropdown(props = {})
             })
           if  name === 'guests'
             li.dropdown__footer.js-dropdown__footer
-              +button({
+              +simple-button({
                 name: 'clear',
-                visability: false,
+                text: 'очистить',
               })
-                +text({
-                  h3: 'очистить',
-                  color: 'primary'
-                })
-              +button()
-                +text({
-                  h3: 'применить',
-                  color: 'primary',
-                })
+              +simple-button({
+                text: 'применить',
+              })
