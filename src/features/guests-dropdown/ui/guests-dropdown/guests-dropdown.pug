@@ -1,5 +1,15 @@
-mixin guests-dropdown()
+mixin guests-dropdown(props = {})
+  -
+    const {
+      title='dropdown',
+      subtitle=undefined,
+      gap='5',
+    } = props
+
   +dropdown({
+    title: title,
+    subtitle: subtitle,
+    gap: gap,
     size: 'big',
     variant: 'guests',
     value: "Сколько гостей",

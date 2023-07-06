@@ -2,6 +2,9 @@ mixin date-dropdown(props = {})
   -
     const {
       variant='date',
+      startTitle='date dropdown',
+      endTitle='date dropdown',
+      filterTitle='filter date dropdown',
     } = props;
 
     const classes = ['js-date-dropdown',]
@@ -20,15 +23,18 @@ mixin date-dropdown(props = {})
           size: 'small',
           name: 'start',
           placeholder: 'ДД.ММ.ГГГГ',
+          title: startTitle,
         })
         +dropdown({
           size: 'small',
           name: 'end',
           placeholder: 'ДД.ММ.ГГГГ',
+          title: endTitle,
         })
     if variant === 'filter'
       +dropdown({
         size: 'medium',
         name: 'filter',
         placeholder: 'ДД.ММ.ГГГГ',
+        title: filterTitle,
         })

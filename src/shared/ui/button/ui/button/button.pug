@@ -3,7 +3,7 @@ mixin button(props={})
     const {
       variant="",
       type="",
-      size="",
+      size="smallest",
       disabled=false,
       visability=true,
       name="",
@@ -13,7 +13,7 @@ mixin button(props={})
 
     const mathVariants = ['minus', 'plus']
     const mainBorderedCLasses = variant === 'main-bordered' ? 'button_variant_main button_variant_main-bordered' : ''
-    const buttonVariants = ['arrow-right', 'expand', ...mathVariants, 'main',]
+    const buttonVariants = ['arrow-right', 'arrow-right_primary', 'expand', ...mathVariants, 'main',]
     const hasArrowClass = hasArrow && 'button_variant button_variant_arrow-right'
     function isMathVariant (variants, variant) {
       return variants.includes(variant)

@@ -54,21 +54,39 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/rating/rating.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/avatar/avatar.scss'))
   link(rel='stylesheet' href=require('@/features/pagination/pagination.scss'))
+  link(rel='stylesheet' href=require('../../ui-kit-forms.scss'))
 
 block content
-  +row({
-    justify: "center",
-    align: "center",
-    gap: '20',
-  })
-    +avatar({
-      isLined: true,
-    })
-    +avatar({
-      title: 'Мурад Сарафанов',
-      description: "5 дней назад",
-      imgName: 'murad_sarafanov.jpg',
-    })
+  .ui-kit-forms
+    +row()
+      +column()
+        +column({
+          gap: '20',
+        })
+          +text-field({
+            subtitle: 'default',
+            type: 'email',
+          })
+          +text-field({
+            value: 'this is pretty awesome',
+            subtitle: 'hover/focus',
+          })
+          +guests-dropdown()
+          +text-field({
+            placeholder: 'ДД.ММ.ГГГГ',
+            title: 'masked text field',
+          })
+          +date-dropdown()
+          +date-dropdown({
+            variant: 'filter',
+          })
+          +text-field({
+            type: 'email',
+            variant: 'subscribtion',
+            title: 'subscribtion text field',
+            size: 'medium',
+          })
+
 
 block script
   script(src=require("@/app/app"))
