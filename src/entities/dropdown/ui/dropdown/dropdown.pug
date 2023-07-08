@@ -21,8 +21,9 @@ mixin dropdown(props = {})
 
     const dropdownSize = !isAmenities && `dropdown_size_${size}`
     const hiddenDropClass = hidden && 'dropdown__drop_hidden'
-    const inputRadius = isAmenities ? 'top-radius-smallest' : 'smallest'
+    const inputRadiusClass = isAmenities ? 'dropdown__form-wrapper_radius_top-radius-smallest' : 'dropdown__form-wrapper_radius_smallest'
 
+    const formWrapperClasses = [inputRadiusClass, 'js-dropdown__form-wrapper']
     const classes = [dropdownSize]
 
   +named-wrapper({
@@ -34,10 +35,7 @@ mixin dropdown(props = {})
       class: classes,
       'data-name': name,
     })
-      +form-wrapper({
-        radiusVariant: inputRadius,
-        additionalClass: 'js-dropdown__form-wrapper dropdown__form-wrapper',
-      })
+      .dropdown__form-wrapper(class=formWrapperClasses)
         +input({
           readonly: true,
           size: size,
