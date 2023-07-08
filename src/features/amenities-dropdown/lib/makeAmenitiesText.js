@@ -2,6 +2,9 @@ import { isLessOrEqualFour, isMoreThanFour, isMoreThanZero, isOne, isZero } from
 
 function makeAmenitiesText(amenities) {
 
+  if (+amenities.first === 0 && +amenities.second === 0) {
+    return 'Выберите удобства';
+  }
 
   const makeBedroomText = () => {
     const text = []

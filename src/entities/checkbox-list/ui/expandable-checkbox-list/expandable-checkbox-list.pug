@@ -1,29 +1,40 @@
-mixin expandable-checkbox-list()
+mixin expandable-checkbox-list(props={})
+  -
+    const {
+      items=[
+        {
+          title: 'Завтрак',
+        },
+        {
+          title: 'Письменный стол',
+          checked: true,
+        },
+        {
+          title: 'Стул для кормления',
+          checked: true,
+        },
+        {
+          title: 'Кроватка',
+          checked: true,
+        },
+        {
+          title: 'Телевизор',
+        },
+        {
+          title: 'Шампунь',
+        },
+      ],
+      title='expandable checkbox list',
+      isOpen=false,
+      gap='5',
+      contentGap='10',
+    }=props
 
   +checkbox-list({
-    title: 'expandable checkbox list',
+    title: title,
     expandable: true,
-    items: [
-      {
-        title: 'Завтрак',
-      },
-      {
-        title: 'Письменный стол',
-        checked: true,
-      },
-      {
-        title: 'Стул для кормления',
-        checked: true,
-      },
-      {
-        title: 'Кроватка',
-        checked: true,
-      },
-      {
-        title: 'Телевизор',
-      },
-      {
-        title: 'Шампунь',
-      },
-    ],
+    items: items,
+    isOpen: isOpen,
+    gap: gap,
+    contentGap: contentGap,
   })

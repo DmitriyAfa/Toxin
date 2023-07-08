@@ -1,17 +1,24 @@
-mixin rich-checkbox-buttons()
+mixin rich-checkbox-buttons(props={})
+  -
+    const {
+      items=[
+        {
+          title: 'Широкий коридор',
+          isRich: true,
+          description: 'Ширина коридоров в номере не менее 91 см.',
+        },
+          {
+          title: 'Помощник для инвалидов',
+          isRich: true,
+          description: 'На 1 этаже вас встретит специалист  и проводит до номера.',
+        },
+      ],
+      title='rich checkbox buttons',
+      contentGap='10',
+    }=props
 
   +checkbox-list({
-    title: 'rich checkbox buttons',
-    items: [
-      {
-        title: 'Широкий коридор',
-        isRich: true,
-        description: 'Ширина коридоров в номере не менее 91 см.',
-      },
-        {
-        title: 'Помощник для инвалидов',
-        isRich: true,
-        description: 'На 1 этаже вас встретит специалист  и проводит до номера.',
-      },
-    ],
+    title: title,
+    items: items,
+    contentGap: contentGap,
 })

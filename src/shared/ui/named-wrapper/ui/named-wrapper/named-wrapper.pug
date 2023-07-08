@@ -8,11 +8,12 @@ mixin named-wrapper(props = {})
       isContentRow=false,
       contentGap='10',
       isWidthAuto=false,
+      isOpen=false,
     } = props
 
     const widthClass = isWidthAuto && 'named-wrapper_width_auto';
 
-    const contentHideClass = expandable && 'named-wrapper__content_hide'
+    const contentHideClass = expandable && !isOpen && 'named-wrapper__content_hide'
     const contentClasses = [contentHideClass, 'js-named-wrapper__content']
 
   .named-wrapper.js-named-wrapper(class=widthClass)
@@ -24,9 +25,10 @@ mixin named-wrapper(props = {})
         align: 'center',
         width: '100',
       })
-        +text({
-          h3: title,
-        })
+        if expandable === false
+          +text({
+            h3: title,
+          })
         if subtitle !== undefined && expandable === false
           +text({
           h3: subtitle,
@@ -34,6 +36,10 @@ mixin named-wrapper(props = {})
           color: 'gray',
           })
         if expandable === true
+          .named-wrapper__text
+            +text({
+              h3: title,
+            })
           span.js-named-wrapper__button
             +button-expand()
       .named-wrapper__content(class=contentClasses)

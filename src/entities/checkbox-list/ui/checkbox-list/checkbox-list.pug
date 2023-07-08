@@ -2,10 +2,12 @@ mixin checkbox-list(props={})
   -
     const {
       items=[],
-      title='',
+      title='checkbox list',
       subtitle=undefined,
       expandable=false,
       gap='16',
+      contentGap='11',
+      isOpen=false,
     } = props;
 
   .checkbox-list
@@ -14,6 +16,8 @@ mixin checkbox-list(props={})
       subtitle: subtitle,
       expandable: expandable,
       gap: gap,
+      contentGap: contentGap,
+      isOpen: isOpen,
     })
       each item in items
         +checkbox({

@@ -1,0 +1,82 @@
+.ui-kit-forms {
+  padding: 32px 0 0 141px;
+
+  &__masked-text-field {
+    padding-top: 3px;
+  }
+
+  &__date-dropdown {
+    padding-top: 20px;
+  }
+
+  &__filter-date-dropdown {
+    padding-top: 21px;
+  }
+
+  &__subscribtion-text-field {
+    padding-top: 21px;
+  }
+
+  &__checkbox-buttons {
+    width: 221px;
+  }
+
+  &__checkbox-buttons {
+    padding-top: 3px;
+  }
+
+  &__toggle-list {
+    padding-top: 4px;
+  }
+
+  &__like-buttons {
+    padding-top: 5px;
+  }
+
+  &__buttons {
+    padding-top: 5px;
+
+    &-example {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+
+  &__pagination {
+    padding-top: 11px;
+  }
+
+  &__dropdowns {
+    padding-top: 90px;
+    margin-bottom: 148px;
+  }
+
+  &__checkboxes {
+    margin-bottom: 94px;
+
+    &-rich {
+      padding: 14px 0 0 2px;
+      width: 259px;
+    }
+  }
+
+  &__bullet {
+    padding: 14px 0 0 125px;
+  }
+
+  &__avatars {
+    padding-left: 3px;
+  }
+
+  &__comment {
+    padding-top: 6px;
+    width: 710px;
+  }
+
+}

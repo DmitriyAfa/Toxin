@@ -1,24 +1,37 @@
-mixin guests-dropdown()
+mixin guests-dropdown(props = {})
+  -
+    const {
+      title='dropdown',
+      subtitle=undefined,
+      gap='5',
+      items=[
+        {
+          title: 'взрослые',
+          value: 0,
+          itemName: 'first',
+        },
+        {
+          title: 'дети',
+          value: 0,
+          itemName: 'second',
+        },
+        {
+          title: 'младенцы',
+          value: 0,
+          itemName: 'third',
+        },
+      ],
+      hidden=true,
+    } = props
+
   +dropdown({
+    title: title,
+    subtitle: subtitle,
+    gap: gap,
     size: 'big',
     variant: 'guests',
     value: "Сколько гостей",
     name: 'guests',
-    items: [
-      {
-        title: 'взрослые',
-        value: 0,
-        itemName: 'first',
-      },
-      {
-        title: 'дети',
-        value: 0,
-        itemName: 'second',
-      },
-      {
-        title: 'младенцы',
-        value: 0,
-        itemName: 'third',
-      },
-    ]
+    items: items,
+    hidden: hidden,
 })

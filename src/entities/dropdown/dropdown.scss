@@ -9,6 +9,31 @@
     }
   }
 
+  &__form-wrapper {
+    height: var(--form-height);
+    border: var(--form-border);
+    border-radius: var(--radius-smallest);
+    display: flex;
+    background: var(--bg-color);
+    position: relative;
+    z-index: var(--z-index-medium);
+
+
+    &:hover {
+      border: var(--form-border-focused);
+    }
+
+    &_radius {
+      &_smallest {
+        border-radius: var(--radius-smallest);
+      }
+
+      &_top-radius-smallest {
+        border-radius: var(--top-radius-smallest);
+      }
+    }
+  }
+
   &__drop {
     background: var(--bg-color);
     position: absolute;
@@ -29,6 +54,12 @@
 
     &_hidden {
       visibility: hidden;
+    }
+
+    &_focused {
+      border-right-color: var(--text-color-50);
+      border-bottom-color: var(--text-color-50);
+      border-left-color: var(--text-color-50);
     }
   }
 

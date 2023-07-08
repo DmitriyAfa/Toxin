@@ -4,6 +4,7 @@ import {
   addDisabledFromMinusBtn,
   addBtnVisability,
   removeBtnVisability,
+  moveExpandButtonUp,
 } from "@/shared/ui/button/button";
 
 const dropdowns = document.querySelectorAll('.js-dropdown')
@@ -23,6 +24,11 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
     }
     expandBtn.addEventListener('click', handleExpandBtn)
 
+    const expandBtnFromShared = expandBtn.querySelector('.' + buttonVariants.EXPAND)
+    if (!drop.classList.contains('dropdown__drop_hidden')) {
+      moveExpandButtonUp(expandBtnFromShared)
+    }
+
     let state = {
       first: 0,
       second: 0,
@@ -34,6 +40,21 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
     let clearBtnClassList;
     let items = drop.querySelectorAll('.js-dropdown__item');
     items = [...items]
+
+    items.forEach((item) => {
+      if (item.dataset.name === 'first') {
+        state.first = +item.dataset.value
+      }
+      if (item.dataset.name === 'second') {
+        state.second = +item.dataset.value
+      }
+      if (item.dataset.name === 'third') {
+        state.third = +item.dataset.value
+      }
+    })
+
+    const text = makeInputTextCallback(state)
+    input.value = text;
 
     if (name === 'guests') {
       footer = drop.querySelector('.js-dropdown__footer')

@@ -3,11 +3,13 @@ mixin button-main(props={})
     const {
       text='click me',
       size='medium',
+      hovered=false,
     } = props
 
   +button({
     variant: 'main',
     size: 'medium',
+    hovered: hovered,
     })
       +text({
         h3: 'click me',

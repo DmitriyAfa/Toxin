@@ -11,6 +11,9 @@ mixin dropdown(props = {})
       dataMultipleDateSeparator=undefined,
       variant='',
       placeholder='',
+      title='dropdown',
+      subtitle=undefined,
+      gap='5',
     } = props
 
     const isAmenities = name === 'amenities'
@@ -18,49 +21,46 @@ mixin dropdown(props = {})
 
     const dropdownSize = !isAmenities && `dropdown_size_${size}`
     const hiddenDropClass = hidden && 'dropdown__drop_hidden'
-    const inputRadius = isAmenities ? 'top-radius-smallest' : 'smallest'
+    const inputRadiusClass = isAmenities ? 'dropdown__form-wrapper_radius_top-radius-smallest' : 'dropdown__form-wrapper_radius_smallest'
 
+    const formWrapperClasses = [inputRadiusClass, 'js-dropdown__form-wrapper']
     const classes = [dropdownSize]
 
-  .dropdown.js-dropdown&attributes({
-    class: classes,
-    'data-name': name,
+  +named-wrapper({
+    title: title,
+    subtitle: subtitle,
+    gap: gap,
   })
-    +form-wrapper({
-      radiusVariant: inputRadius,
-      additionalClass: 'js-dropdown__form-wrapper dropdown__form-wrapper',
+    .dropdown.js-dropdown&attributes({
+      class: classes,
+      'data-name': name,
     })
-      +input({
-        readonly: true,
-        size: size,
-        value: value,
-        type: type,
-        'data-multiple-date-separator': dataMultipleDateSeparator,
-        placeholder: placeholder,
-        disabled: true,
-      })
-      span.js-dropdown__button-expand
-        +button-expand()
-    if hasFooter
-      ul.dropdown__drop.js-dropdown__drop(class=hiddenDropClass)
-        each item in items
-          +dropdown-item({
-            title: item.title,
-            value: item.value,
-            itemName: item.itemName,
-          })
-        if  name === 'guests'
-          li.dropdown__footer.js-dropdown__footer
-            +button({
-              name: 'clear',
-              visability: false,
+      .dropdown__form-wrapper(class=formWrapperClasses)
+        +input({
+          readonly: true,
+          size: size,
+          value: value,
+          type: type,
+          'data-multiple-date-separator': dataMultipleDateSeparator,
+          placeholder: placeholder,
+          disabled: true,
+        })
+        span.js-dropdown__button-expand
+          +button-expand()
+      if hasFooter
+        ul.dropdown__drop.js-dropdown__drop(class=hiddenDropClass)
+          each item in items
+            +dropdown-item({
+              title: item.title,
+              value: item.value,
+              itemName: item.itemName,
             })
-              +text({
-                h3: 'очистить',
-                color: 'primary'
+          if  name === 'guests'
+            li.dropdown__footer.js-dropdown__footer
+              +simple-button({
+                name: 'clear',
+                text: 'очистить',
               })
-            +button()
-              +text({
-                h3: 'применить',
-                color: 'primary',
+              +simple-button({
+                text: 'применить',
               })

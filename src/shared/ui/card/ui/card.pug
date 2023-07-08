@@ -4,6 +4,7 @@ mixin card(props = {})
       border="round_smallest",
       theme=undefined,
       isSquare=false,
+      variant=undefined,
     } = props
 
     const themes = [
@@ -11,6 +12,8 @@ mixin card(props = {})
       "light-gray","lightest-gray",
       "primary", "secondary"
       ]
+
+    const variants = ['widget']
 
   -
     const borderClass = border === "round_smallest" 
@@ -22,7 +25,10 @@ mixin card(props = {})
 
     const themeClass = themes.includes(theme) && `card_theme_${theme}`
     const squareClass = 'card_square'
+    const variantClass = variants.includes(variant) && `card_variant_${variant}`
 
-    const classes = [borderClass, theme && themeClass, isSquare && squareClass]
+    const classes = [borderClass, theme && themeClass, isSquare && squareClass, variantClass]
 
   .card(class=classes)
+    if variant === 'widget'
+      block

@@ -1,7 +1,10 @@
 import { buttonVariants } from "./constants/buttonConstants";
 
-const toggleExpandButton = (e) => {
-  e.target.classList.toggle('button_variant_expand-up')
+const toggleExpandButtonByEvent = (e) => {
+  e.target.classList.toggle(buttonVariants.EXPAND_UP)
+}
+const moveExpandButtonUp = (btn) => {
+  btn.classList.add(buttonVariants.EXPAND_UP)
 }
 const removeDisabledFromMinusBtn = (classList) => {
   classList.remove('button_variant_math_disabled')
@@ -20,7 +23,8 @@ const isExpandButton = (classList) => {
 }
 
 export {
-  toggleExpandButton,
+  toggleExpandButtonByEvent,
+  moveExpandButtonUp,
   removeDisabledFromMinusBtn,
   addDisabledFromMinusBtn,
   isExpandButton,

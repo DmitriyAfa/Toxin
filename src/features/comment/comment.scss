@@ -1,0 +1,13 @@
+.comment {
+
+  &__content {
+    display: flex;
+    gap: 14px;
+    padding-left: 4px;
+  }
+
+  &__text {
+    color: var(--text-color-75);
+    line-height: 1.7;
+  }
+}

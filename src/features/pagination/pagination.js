@@ -47,8 +47,6 @@ function makePagination(item) {
   };
 
   const myPagination = new PaginationSystem(options);
-
-  console.log(myPagination)
 }
 
 export { makePagination }

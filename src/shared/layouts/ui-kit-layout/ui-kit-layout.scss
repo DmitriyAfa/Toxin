@@ -2,6 +2,10 @@
   background: var(--ui-kit-bg-color);
   height: 100vh;
 
+  &__content {
+    background: var(--ui-kit-bg-color);
+  }
+
   &__header {
     padding: 30px;
   }

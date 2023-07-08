@@ -48,4 +48,13 @@
       background: var(--secondary-color);
     }
   }
+
+  &_variant_widget {
+    min-width: 380px;
+    max-width: 380px;
+    padding: 39px 30px 30px 29px;
+    background: var(--card-background);
+    border: var(--card-border);
+    box-shadow: var(--main-box-shadow);
+  }
 }
