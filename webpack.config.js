@@ -6,9 +6,6 @@ const buildPlugins = require('./config/build/buildPlugins');
 const buildResolvers = require('./config/build/buildResolvers');
 
 const paths = {
-  entry: {
-    index: './src/pages/ui-kit/colors-and-types/ui/colors-and-types.pug'
-  },
   src: path.join(__dirname, 'src'),
   alias: {
     '@/app': path.join(__dirname, 'src/app/'),
@@ -31,7 +28,7 @@ module.exports = {
   }),
 
   entry: {
-    index: './src/pages/ui-kit-forms/ui/ui-kit-forms/ui-kit-forms.pug'
+    index: './src/pages/ui-kit-cards/index.pug'
   },
 
   plugins: buildPlugins(),

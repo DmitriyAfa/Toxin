@@ -1,0 +1,33 @@
+mixin room-search-card(props={})
+  -
+    const {
+      title="Найдём номера под ваши пожелания",
+      formMethod="",
+      formAction="needToAdd-page",
+    } = props
+
+  .room-search-card
+    +card({
+      variant: 'widget',
+    })
+      .room-search-card__title
+        +text({
+          h1: title,
+        })
+      form(method=`${formMethod}`, action=`./${formAction}.html`)
+        +column({
+          gap: '20',
+        })
+          .room-search-card__date-dropdown
+            +date-dropdown({
+              startTitle: 'прибытие',
+              endTitle: 'выезд',
+            })
+          .room-search-card__guests-dropdown
+            +guests-dropdown({
+              title: 'гости',
+            })
+          .room-search-card__button
+            +big-arrow-button({
+              text: 'подобрать номер',
+            })
