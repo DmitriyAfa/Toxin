@@ -1,7 +1,7 @@
-import { buttonVariants, toggleExpandButton } from "./button";
+import { buttonVariants, toggleExpandButtonByEvent } from "./button";
 
 const expandButtons = document.querySelectorAll('.' + buttonVariants.EXPAND);
 
 expandButtons.forEach((btn) => {
-  btn.addEventListener('click', toggleExpandButton)
+  btn.addEventListener('click', toggleExpandButtonByEvent)
 })

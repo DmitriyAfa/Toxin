@@ -24,6 +24,7 @@ include @/entities/like-buttons/index
 include ../rate-buttons/rate-buttons
 include @/features/range-slider/index
 include @/features/pagination/index
+include @/features/comment/index
 include @/shared/ui/avatar/index
 
 block variables
@@ -54,6 +55,7 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/rating/rating.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/avatar/avatar.scss'))
   link(rel='stylesheet' href=require('@/features/pagination/pagination.scss'))
+  link(rel='stylesheet' href=require('@/features/comment/comment.scss'))
   link(rel='stylesheet' href=require('../../ui-kit-forms.scss'))
 
 block content
@@ -223,8 +225,40 @@ block content
                 ],
                 hidden: false,
               })
-      +row()
-      +row()
+      .ui-kit-forms__checkboxes
+        +row()
+          +row({
+            gap: '178',
+          })
+            +column({
+              gap: '19',
+            })
+              +expandable-checkbox-list()
+              +expandable-checkbox-list({
+                isOpen: true,
+              })
+            .ui-kit-forms__checkboxes-rich
+              +rich-checkbox-buttons()
+          .ui-kit-forms__bullet
+            +bullet-list()
+      +row({
+        gap: '163',
+      })
+        .ui-kit-forms__avatars
+          +column({
+            gap: '23',
+          })
+            +avatar({
+              isLined: true,
+            })
+            +avatar({
+              isLined: true,
+              title: 'Удобство',
+              description: 'Окно в каждой из спален',
+              imgName: 'сonvenience.svg',
+            })
+        .ui-kit-forms__comment
+          +comment()
 
 
 block script

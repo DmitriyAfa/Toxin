@@ -1,0 +1,30 @@
+mixin comment(props={})
+  -
+    const {
+      avatar={
+        title:'Мурад Сарафанов',
+        description:'5 дней назад',
+        imgName:'murad_sarafanov.jpg',
+        pageName:"ui-kit-forms",
+      },
+      like={
+        value: 12,
+        active: true,
+      },
+      comment='Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+    } = props
+
+  .comment
+    +avatar({
+      title: avatar.title,
+      description: avatar.description,
+      imgName: avatar.imgName,
+      pageName: avatar.pageName,
+    })
+    .comment__content
+      span.comment__like
+        +like({
+        value: like.value,
+        active: like.active,
+      })
+      p.comment__text #{comment}

@@ -5,9 +5,15 @@
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
   padding-bottom: 20px;
 
+  &__icon {
+    width: 42px;
+    height: 40px;
+  }
+
   &_none-lined {
     border: none;
     gap: 10px;
+    padding-bottom: 11px;
 
     .avatar__icon {
       width: 47.5px;

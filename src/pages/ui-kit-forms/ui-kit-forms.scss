@@ -54,6 +54,29 @@
 
   &__dropdowns {
     padding-top: 90px;
+    margin-bottom: 148px;
+  }
+
+  &__checkboxes {
+    margin-bottom: 94px;
+
+    &-rich {
+      padding: 14px 0 0 2px;
+      width: 259px;
+    }
+  }
+
+  &__bullet {
+    padding: 14px 0 0 125px;
+  }
+
+  &__avatars {
+    padding-left: 3px;
+  }
+
+  &__comment {
+    padding-top: 6px;
+    width: 710px;
   }
 
 }

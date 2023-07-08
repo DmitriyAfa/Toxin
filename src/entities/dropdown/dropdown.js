@@ -4,6 +4,7 @@ import {
   addDisabledFromMinusBtn,
   addBtnVisability,
   removeBtnVisability,
+  moveExpandButtonUp,
 } from "@/shared/ui/button/button";
 
 const dropdowns = document.querySelectorAll('.js-dropdown')
@@ -23,9 +24,9 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
     }
     expandBtn.addEventListener('click', handleExpandBtn)
 
-    const expandBtnFromShared = expandBtn.querySelector('.js-button_variant_expand')
+    const expandBtnFromShared = expandBtn.querySelector('.' + buttonVariants.EXPAND)
     if (!drop.classList.contains('dropdown__drop_hidden')) {
-      expandBtnFromShared.classList.toggle('button_variant_expand-up')
+      moveExpandButtonUp(expandBtnFromShared)
     }
 
     let state = {
