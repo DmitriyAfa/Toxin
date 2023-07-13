@@ -5,6 +5,8 @@ mixin date-dropdown(props = {})
       startTitle='date dropdown',
       endTitle='date dropdown',
       filterTitle='filter date dropdown',
+      startDate= '',
+      endDate= '',
     } = props;
 
     const classes = ['js-date-dropdown',]
@@ -14,6 +16,8 @@ mixin date-dropdown(props = {})
       classes,
     ],
     'data-name': variant,
+    'data-start': startDate,
+    'data-end': endDate,
     })
     if variant === 'date'
       +flex({

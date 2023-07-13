@@ -1,0 +1,33 @@
+mixin price-calc(props={})
+  -
+    const {
+      price=9990,
+      days=4,
+      servicePrice=0,
+      discount=2179,
+      additionalPrice=300,
+    }=props;
+
+    const toLocalFormat = (cost) => (cost.toLocaleString('ru-RU', { minimumFractionDigits: 0 }))
+
+    const formattedPrice = toLocalFormat(price)
+    const initialPrice = toLocalFormat(price*4)
+    const formattedDiscount = toLocalFormat(discount)
+    const formattedServicePrice = toLocalFormat(servicePrice)
+    const formattedAdditionalPrice = toLocalFormat(additionalPrice)
+    const total = toLocalFormat(price * days + servicePrice - discount + additionalPrice)
+
+  .price-calc
+    .price-calc__initial
+      span.price-calc__initial-calc #{formattedPrice}₽ x #{days} суток
+      span.price-calc__initial-price #{initialPrice}₽
+    .price-calc__service
+      span.price-calc__service-discount Сбор за услуги: скидка #{formattedDiscount}₽
+      span.price-calc__service-price #{formattedServicePrice}₽
+    .price-calc__additional
+      span.price-calc__additional-discount Сбор за дополнительные услуги
+      span.price-calc__additional-price #{formattedAdditionalPrice}₽
+    .price-calc__total-price
+      span.total-price__text Итого
+      .total-price__points
+      span.total-price__value #{total}₽

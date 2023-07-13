@@ -1,0 +1,16 @@
+mixin room-price(props={})
+  -
+    const {
+      value='',
+      text='',
+    }=props
+
+    const priceText = value + "\u20BD"
+
+  .room-price
+    +text({
+      text: priceText,
+      weight: 'bold',
+      color: 'gray',
+    })
+    span.room-price__text #{text}

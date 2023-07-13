@@ -21,6 +21,9 @@ const addBtnVisability = (classList) => {
 const isExpandButton = (classList) => {
   return classList.contains(buttonVariants.EXPAND);
 }
+const preventDefaultButton = (e) => {
+  e.preventDefault();
+}
 
 export {
   toggleExpandButtonByEvent,
@@ -31,4 +34,5 @@ export {
   addBtnVisability,
   removeBtnVisability,
   buttonVariants,
+  preventDefaultButton,
 }

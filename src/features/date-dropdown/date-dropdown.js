@@ -23,6 +23,9 @@ function makeDateDropdowns(element) {
 
   let dpMin, dpMax;
 
+  const startDate = element.dataset.start;
+  const endDate = element.dataset.end;
+
   dpMin = new AirDatepicker($start, {
     onSelect({ date, formattedDate, datepicker, }) {
 
@@ -59,10 +62,13 @@ function makeDateDropdowns(element) {
         }
       }
     ],
+    selectedDates: [new Date(startDate)],
   })
 
 
-  dpMax = new AirDatepicker($end)
+  dpMax = new AirDatepicker($end, {
+    selectedDates: [new Date(endDate)],
+  })
 
   const startExpandBtnHandller = (e) => {
     const classList = e.target.classList;

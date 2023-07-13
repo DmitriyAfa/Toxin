@@ -19,7 +19,7 @@ const makeDropdownFunctional = ({ dropdown, makeInputTextCallback, name }) => {
       drop.classList.toggle('dropdown__drop_hidden')
 
       if (name === 'guests') {
-        formWrapper.classList.toggle('form-wrapper_radius_top-radius-smallest')
+        formWrapper.classList.toggle('dropdown__form-wrapper_radius_top-radius-smallest')
       }
     }
     expandBtn.addEventListener('click', handleExpandBtn)

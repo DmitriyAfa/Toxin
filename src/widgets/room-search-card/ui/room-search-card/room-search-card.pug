@@ -4,6 +4,17 @@ mixin room-search-card(props={})
       title="Найдём номера под ваши пожелания",
       formMethod="",
       formAction="needToAdd-page",
+      dateDropdown={
+        startTitle: 'прибытие',
+        endTitle: 'выезд',
+      },
+      guestsDropdown={
+        title: 'гости',
+      },
+      button={
+        text: 'подобрать номер',
+        name: 'submit',
+      },
     } = props
 
   .room-search-card
@@ -19,15 +30,8 @@ mixin room-search-card(props={})
           gap: '20',
         })
           .room-search-card__date-dropdown
-            +date-dropdown({
-              startTitle: 'прибытие',
-              endTitle: 'выезд',
-            })
+            +date-dropdown(dateDropdown)
           .room-search-card__guests-dropdown
-            +guests-dropdown({
-              title: 'гости',
-            })
+            +guests-dropdown(guestsDropdown)
           .room-search-card__button
-            +big-arrow-button({
-              text: 'подобрать номер',
-            })
+            +big-arrow-button(button)

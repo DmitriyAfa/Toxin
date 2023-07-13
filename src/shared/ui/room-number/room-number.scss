@@ -1,0 +1,22 @@
+.room-number {
+  display: flex;
+
+  &__symbol {
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 0;
+    font-weight: 700;
+    padding-top: 18px;
+  }
+
+  &__value {
+    padding-left: 4px;
+  }
+
+  &__text {
+    color: var(--primary-color);
+    font: 700 12px Montserrat, Areal, sans-serif;
+    text-transform: uppercase;
+    padding: 10px 0 0 10px;
+  }
+}
