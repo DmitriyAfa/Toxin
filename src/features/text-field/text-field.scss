@@ -1,13 +1,11 @@
 .text-field {
+  input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
 
-  &_date {
-
-    input[type=date]::-webkit-calendar-picker-indicator {
-      display: none;
-    }
-
-    input[type=date] {
-      font: 400 18px Montserrat, Areal, sans-serif;
-    }
+  input[type=date] {
+    font: 400 18px Montserrat, Areal, sans-serif;
+    color: var(--text-color-25);
+    padding: 0px 0 7px 13px;
   }
 }

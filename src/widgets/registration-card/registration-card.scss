@@ -1,0 +1,40 @@
+.registration-card {
+
+  &__title {
+    margin-bottom: 19px;
+  }
+
+  &__text-fields {
+    margin-bottom: 11px;
+  }
+
+  &__radio-buttons {
+    margin-bottom: 27px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+  }
+
+  &__enter-data {
+    margin-bottom: 10px;
+  }
+
+  &__toggle {
+    margin-bottom: 23px;
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__entry {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      line-height: 3;
+      color: #000000;
+    }
+  }
+}

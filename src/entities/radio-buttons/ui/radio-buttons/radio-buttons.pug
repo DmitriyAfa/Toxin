@@ -7,18 +7,20 @@ mixin radio-buttons(props={})
       ],
       title='radio buttons',
       gap='16',
+      withTitle=true,
     } = props;
 
-  .radio-buttons
-    +named-wrapper({
-      title: title,
-      gap: gap,
-      isContentRow: true,
-      contentGap: '20',
-    })
-      each item in items
-        +radio({
-          group: item.group,
-          title: item.title,
-          checked: item.checked,
-        })
+  if withTitle === true
+    .radio-buttons
+      +named-wrapper({
+        title: title,
+        gap: gap,
+        isContentRow: true,
+        contentGap: '20',
+      })
+        each item in items
+          +radio({
+            group: item.group,
+            title: item.title,
+            checked: item.checked,
+          })

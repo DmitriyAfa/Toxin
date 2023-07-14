@@ -5,22 +5,39 @@ mixin text-field(props = {})
       placeholder="Email",
       value=undefined,
       size="biggest",
-      variant="",
       isFocused=false,
       additionalClass='',
       radiusVariant='',
       title='text field',
       subtitle=undefined,
       gap='5',
+      withTitle=true,
     } = props
 
     const classes = ['js-text-field', additionalClass]
 
-  +named-wrapper({
-    title: title,
-    subtitle: subtitle,
-    gap: '5',
-  })
+  if withTitle === true
+    +named-wrapper({
+      title: title,
+      subtitle: subtitle,
+      gap: '5',
+    })
+      .text-field(class=classes)
+        +form-wrapper({
+        isFocused: isFocused,
+        radiusVariant: radiusVariant,
+        })
+          +input({
+            size: size,
+            value: value,
+            placeholder: placeholder,
+            type: type,
+          })
+          block
+          if variant === "subscribtion"
+            span.js-text-field__button
+              +smallest-arrow-button()
+  if withTitle === false
     .text-field(class=classes)
       +form-wrapper({
       isFocused: isFocused,

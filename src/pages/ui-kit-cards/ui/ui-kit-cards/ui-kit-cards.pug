@@ -30,6 +30,7 @@ include @/shared/ui/card/index
 include @/widgets/booking-card/index
 include @/shared/ui/room-number/index
 include @/shared/ui/room-price/index
+include @/widgets/registration-card/index
 
 block variables
   - const title = 'Form elements'
@@ -66,12 +67,14 @@ block style
   link(rel='stylesheet' href=require('@/shared/ui/room-number/room-number.scss'))
   link(rel='stylesheet' href=require('@/shared/ui/room-price/room-price.scss'))
   link(rel='stylesheet' href=require('@/widgets/booking-card/booking-card.scss'))
+  link(rel='stylesheet' href=require('@/widgets/registration-card/registration-card.scss'))
 
 block content
   .ui-kit-cards
     .ui-kit-cards__room-search-card
     .ui-kit-cards__booking-card
-      +booking-card()
+    .ui-kit-cards__registration-card
+      +registration-card()
 
 
 block script
