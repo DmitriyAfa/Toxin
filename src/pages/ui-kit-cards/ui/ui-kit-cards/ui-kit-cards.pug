@@ -32,6 +32,7 @@ include @/shared/ui/room-number/index
 include @/shared/ui/room-price/index
 include @/widgets/registration-card/index
 include @/widgets/login-card/index
+include ../calendar/calendar
 
 block variables
   - const title = 'Form elements'
@@ -77,7 +78,8 @@ block content
     .ui-kit-cards__booking-card
     .ui-kit-cards__registration-card
     .ui-kit-cards__login-card
-      +login-card()
+    .ui-kit-cards__calendar
+      +calendar()
 
 
 block script
@@ -91,3 +93,4 @@ block script
   script(src=require("@/features/date-dropdown/date-dropdown"))
   script(src=require("@/features/range-slider/index.js"))
   script(src=require("@/features/pagination/index.js"))
+  script(src=require("../calendar/calendar.js"))
