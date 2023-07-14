@@ -1,0 +1,15 @@
+mixin room-number(props={})
+  -
+    const {
+      symbol='',
+      value='',
+      text='',
+    }=props
+
+  .room-number
+    span.room-number__symbol #{symbol}
+    span.room-number__value 
+      +text({
+        h1: value,
+      })
+    span.room-number__text #{text}

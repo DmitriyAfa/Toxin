@@ -1,0 +1,65 @@
+mixin registration-card(props={})
+  -
+    const {
+      title='Регистрация аккаунта',
+      button={
+        text: 'перейти к оплате',
+        name: 'submit',
+      },
+    }=props
+
+  .registration-card
+    +card({
+      variant: 'widget',
+    })
+      .registration-card__title
+        +text({
+          h1: title,
+        })
+      form(method=`${formMethod}`, action=`./${formAction}.html`)
+        .registration-card__text-fields
+          +column({
+            gap: '10',
+          })
+            +text-field({
+              placeholder: 'Имя',
+              withTitle: false,
+            })
+            +text-field({
+              placeholder: 'Фамилия',
+              withTitle: false,
+            })
+        .registration-card__radio-buttons
+          +row({
+            gap: '20',
+          })
+            +radio({ group: "gender", title: "Мужчина", checked: true })
+            +radio({ group: "gender", title: "Женщина", checked: false })
+        .registration-card__date
+          +text-field({
+            title: "дата рождения",
+            placeholder: 'ДД.ММ.ГГГГ',
+            type: 'date',
+          })
+        .registration-card__enter-data
+          +column({
+            gap: '10',
+          })
+            +text-field({
+              placeholder: 'Email',
+              title: 'данные для входа в сервис'
+            })
+            +text-field({
+              placeholder: 'Пароль',
+              type: 'password',
+              withTitle: false,
+            })
+        .registration-card__toggle
+          +toggle({ title: "Получать спецпредложения"},)
+        .registration-card__button
+          +big-arrow-button(button)
+        .registration-card__entry
+          span.registration-card__entry-text Уже есть аккаунт на Toxin
+          +button-main-bordered({
+            text: 'войти',
+          })

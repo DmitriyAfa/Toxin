@@ -1,0 +1,20 @@
+mixin booking-card-header(props={})
+  -
+    const {
+      title='888',
+      label='люкс',
+      price='9 990',
+      priceDescription='в сутки',
+    } = props
+
+  .booking-card__header
+    +room-number({
+      symbol: "№",
+      value: "888",
+      text: "люкс",
+    })
+    .booking-card__price
+      +room-price({
+        value: price,
+        text: priceDescription,
+      })

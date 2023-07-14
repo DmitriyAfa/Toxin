@@ -1,0 +1,11 @@
+.room-price {
+  display: flex;
+  padding-top: 6px;
+
+  &__text {
+    font: 400 12px Montserrat, Areal, sans-serif;
+    color: var(--text-color-50);
+    padding-top: 6px;
+    padding-left: 4px;
+  }
+}

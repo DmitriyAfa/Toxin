@@ -41,6 +41,7 @@
     top: calc(var(--form-height) - 0.7px);
     border-radius: var(--bottom-radius-smallest);
     padding: 7px 7px 0 15px;
+    z-index: 9;
 
     border-right-color: var(--text-color-25);
     border-right-style: solid;

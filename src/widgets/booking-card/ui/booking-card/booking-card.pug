@@ -1,0 +1,62 @@
+include ../booking-card-header/booking-card-header
+include ../price-calc/price-calc
+mixin booking-card(props={})
+  -
+    const {
+      formMethod="",
+      formAction="needToAdd-page",
+      header={
+        title: '888',
+        label: 'люкс',
+        price: '9 990',
+        priceDescription: 'в сутки',
+      },
+      dateDropdown={
+        startTitle: 'прибытие',
+        endTitle: 'выезд',
+        startDate: '2019-08-19',
+        endDate: '2019-08-23',
+      },
+      guestsDropdown={
+        title: 'гости',
+        items: [
+        {
+          title: 'взрослые',
+          value: 2,
+          itemName: 'first',
+        },
+        {
+          title: 'дети',
+          value: 1,
+          itemName: 'second',
+        },
+        {
+          title: 'младенцы',
+          value: 0,
+          itemName: 'third',
+        },
+      ],
+      },
+      button={
+        text: 'забронировать',
+        name: 'submit',
+      },
+    } = props
+
+  .booking-card
+    +card({
+      variant: 'widget',
+    })
+      +booking-card-header(header)
+      form(method=`${formMethod}`, action=`./${formAction}.html`)
+        +column({
+          gap: '20',
+        })
+        .booking-card__date-dropdown
+          +date-dropdown(dateDropdown)
+        .booking-card__guests-dropdown
+          +guests-dropdown(guestsDropdown)
+        .booking-card__calc
+          +price-calc()
+        .booking-card__button
+          +big-arrow-button(button)

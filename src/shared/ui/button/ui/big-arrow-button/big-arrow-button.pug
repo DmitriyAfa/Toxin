@@ -3,12 +3,14 @@ mixin big-arrow-button(props={})
     const {
       text='перейти к оплате',
       size='medium',
+      name='',
     } = props
 
   +button({
     variant: 'main',
     size: 'biggest',
     hasArrow: true,
+    name: name,
   })
     +text({
       h3: text,

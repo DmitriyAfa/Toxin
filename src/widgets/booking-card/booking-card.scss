@@ -1,0 +1,95 @@
+.booking-card {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    display: flex;
+
+    .title {
+      display: flex;
+    }
+  }
+
+  &__date-dropdown {
+    margin-bottom: 20px;
+  }
+
+  &__guests-dropdown {
+    margin-bottom: 22px;
+  }
+
+  .price-calc {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-color-75);
+
+    &__initial {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 16.5px;
+    }
+
+    &__service {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 17px;
+
+      &-discount {
+        width: 242px;
+        display: flex;
+        position: relative;
+
+        &::after {
+          content: url('./assets/icons/info.svg');
+          position: absolute;
+          right: 0;
+          top: -3px;
+        }
+      }
+    }
+
+    &__additional {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 31px;
+
+      &-discount {
+        width: 237px;
+        display: flex;
+        position: relative;
+
+        &::after {
+          content: url('./assets/icons/info.svg');
+          position: absolute;
+          right: -4px;
+          top: 0px;
+        }
+      }
+    }
+
+    &__total-price {
+      display: flex;
+      color: var(--text-color);
+      font: 700 19px Montserrat, Areal, sans-serif;
+      align-items: baseline;
+      margin-bottom: 22px;
+
+      .total-price {
+
+        &__text {
+          font-family: Montserrat, Arial, sans-serif;
+          vertical-align: text-bottom;
+        }
+
+        &__points {
+          width: 100%;
+          margin: 0 5px;
+          border-bottom: dotted 1px var(--text-color-25);
+        }
+      }
+    }
+  }
+}
