@@ -105,7 +105,7 @@
 
       .air-datepicker-body--day-name {
         color: var(--primary-color);
-        font: 700 12px Montserrat, Areal, sans-serif;
+        font: var(--font-h3);
         text-transform: capitalize;
       }
     }

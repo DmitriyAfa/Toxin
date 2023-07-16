@@ -45,7 +45,7 @@
         &::after {
           content: url('./assets/icons/info.svg');
           position: absolute;
-          right: 0;
+          right: 1px;
           top: -3px;
         }
       }
@@ -73,7 +73,7 @@
     &__total-price {
       display: flex;
       color: var(--text-color);
-      font: 700 19px Montserrat, Areal, sans-serif;
+      font: 700 1.3rem Montserrat, Areal, sans-serif;
       align-items: baseline;
       margin-bottom: 22px;
 
