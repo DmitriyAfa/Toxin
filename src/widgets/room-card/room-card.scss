@@ -1,0 +1,35 @@
+.room-card {
+  max-width: 270px;
+  max-height: 257.5px;
+  background: var(--card-background);
+  border-radius: var(--radius-smallest);
+  box-shadow: var(--main-box-shadow);
+
+  &__wrapper {
+    padding: 16px 17px 19px 20px;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    padding-bottom: 8px;
+  }
+
+  &__evaluation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__feedback {
+    color: var(--text-color-50);
+    display: flex;
+    gap: 5px;
+
+    &-value {
+      font-weight: 700;
+    }
+  }
+}

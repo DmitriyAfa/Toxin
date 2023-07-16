@@ -1,0 +1,41 @@
+mixin room-card(props={})
+  -
+    const {
+      images=[
+        'room-img-1.jpg',
+        'room-img-2.jpg',
+        'room-img-3.jpg',
+        'room-img-4.jpg',
+        ],
+      roomNumber={
+        symbol: "№",
+        value: "888",
+        text: "люкс",
+        isSmall: true,
+      },
+      roomPrice={
+        value: '9 990',
+        text: 'в сутки',
+        isSmall: true,
+      },
+      rating=5,
+      feedbackValue=145,
+    }=props
+
+  .room-card
+    .room-card__carousel
+      +carousel({
+        images: images
+      })
+    .room-card__wrapper
+      .room-card__info
+        +room-number(roomNumber)
+        .room-card__price
+          +room-price(roomPrice)
+      .room-card__evaluation
+        +rating({
+          rating: rating,
+        })
+        .room-card__feedback 
+          span.room-card__feedback-value #{feedbackValue}
+          span.room-card__feedback-text Отзывов

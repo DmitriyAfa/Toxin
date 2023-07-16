@@ -1,34 +1,46 @@
 .ui-kit-cards {
   position: relative;
 
-  // &__room-search-card {
-  //   position: absolute;
-  //   top: 50px;
-  //   left: 37%;
-  // }
+  &__room-search-card {
+    position: absolute;
+    left: 139px;
+    top: 40px;
+  }
 
-  // &__booking-card {
-  //   position: absolute;
-  //   top: 50px;
-  //   left: 37%;
-  // }
+  &__booking-card {
+    position: absolute;
+    left: 559px;
+    top: 41px;
+  }
 
-  // &__registration-card {
-  //   position: absolute;
-  //   top: 50px;
-  //   left: 37%;
-  // }
+  &__registration-card {
+    position: absolute;
+    left: 140px;
+    top: 454px;
+  }
 
-  // &__login-card {
-  //   position: absolute;
-  //   top: 50px;
-  //   left: 37%;
-  // }
+  &__login-card {
+    position: absolute;
+    left: 560px;
+    top: 594px;
+  }
 
   &__calendar {
     position: absolute;
-    top: 50px;
-    left: 37%;
+    top: 39px;
+    right: 218px;
+  }
+
+  &__first-room-card {
+    position: absolute;
+    right: 269px;
+    top: 448px;
+  }
+
+  &__second-room-card {
+    position: absolute;
+    right: 269px;
+    top: 745px;
   }
 }
 

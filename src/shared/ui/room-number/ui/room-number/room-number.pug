@@ -4,12 +4,19 @@ mixin room-number(props={})
       symbol='',
       value='',
       text='',
+      isSmall=false,
     }=props
+    const roomNumberClass = isSmall && 'room-number_small'
 
-  .room-number
+  .room-number(class=roomNumberClass)
     span.room-number__symbol #{symbol}
-    span.room-number__value 
-      +text({
-        h1: value,
-      })
+    span.room-number__value
+      if isSmall === false
+        +text({
+          h1: value,
+        })
+      if isSmall === true
+        +text({
+          h2: value,
+        })
     span.room-number__text #{text}

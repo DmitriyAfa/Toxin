@@ -1,6 +1,16 @@
 .room-number {
   display: flex;
 
+  &_small {
+    .room-number__symbol {
+      padding-top: 15px;
+    }
+
+    .room-number__text {
+      padding: 8px 0 0 2px;
+    }
+  }
+
   &__symbol {
     color: var(--text-color);
     font-size: 1rem;
