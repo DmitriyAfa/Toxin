@@ -1,0 +1,23 @@
+.login-card {
+  &__title {
+    margin-bottom: 19px;
+  }
+
+  &__enter-data {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    margin-bottom: 31px;
+  }
+
+  &__entry {
+    display: flex;
+    justify-content: space-between;
+
+    &-text {
+      line-height: 3;
+      color: #000000;
+    }
+  }
+}

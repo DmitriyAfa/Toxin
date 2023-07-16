@@ -3,11 +3,13 @@ mixin room-price(props={})
     const {
       value='',
       text='',
+      isSmall=false,
     }=props
 
     const priceText = value + "\u20BD"
+    const roomPriceClass = isSmall && 'room-price_small'
 
-  .room-price
+  .room-price(class=roomPriceClass)
     +text({
       text: priceText,
       weight: 'bold',

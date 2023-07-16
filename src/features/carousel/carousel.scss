@@ -1,0 +1,93 @@
+.carousel {
+  position: relative;
+
+  &_theme {
+    &__main {
+      .tns-outer {
+        .tns-controls {
+          button {
+            color: var(--bg-color);
+          }
+        }
+      }
+    }
+  }
+
+  &__img {
+    width: 271px;
+    height: 151.38px;
+    object-fit: cover;
+    border-radius: var(--top-radius-smallest);
+  }
+
+  &__prev-btn {
+    width: 25px;
+    height: 25px;
+    background-color: blue;
+  }
+
+  .tns-outer {
+    .tns-controls {
+      button {
+        position: absolute;
+        width: 0;
+        height: 0;
+        display: block;
+        color: var(--ui-kit-bg-color);
+
+        &:first-child {
+          &::after {
+            content: url('./assets/icons/expand_more.svg');
+            background: none;
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+            display: block;
+            position: absolute;
+            top: 68px;
+          }
+        }
+
+        &:last-child {
+          &::after {
+            content: url('./assets/icons/expand_more.svg');
+            transform: rotate(180deg);
+            background: none;
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+            display: block;
+            position: absolute;
+            top: 39px;
+            left: 227px;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    position: absolute;
+    bottom: 19px;
+    width: 60px;
+    gap: 4px;
+    left: 215px;
+
+    &-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      font-size: 0;
+      background-color: transparent;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+
+      &.tns-nav-active {
+        background-color: #fff;
+      }
+    }
+  }
+}

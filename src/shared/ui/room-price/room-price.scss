@@ -2,6 +2,14 @@
   display: flex;
   padding-top: 6px;
 
+  &_small {
+    padding-top: 3px;
+
+    .room-price__text {
+      padding-top: 4px;
+    }
+  }
+
   &__text {
     font: 400 12px Montserrat, Areal, sans-serif;
     color: var(--text-color-50);

@@ -1,0 +1,39 @@
+mixin login-card(props={})
+  -
+    const {
+      title='Войти',
+      button={
+        text: 'войти',
+        name: 'submit',
+      },
+    }=props
+
+  .login-card
+    +card({
+      variant: 'widget',
+    })
+      .login-card__title
+        +text({
+          h1: title,
+        })
+      form(method=`${formMethod}`, action=`./${formAction}.html`)
+        .login-card__enter-data
+          +column({
+            gap: '10',
+          })
+            +text-field({
+              placeholder: 'Email',
+              withTitle: false,
+            })
+            +text-field({
+              placeholder: 'Пароль',
+              type: 'password',
+              withTitle: false,
+            })
+        .login-card__button
+          +big-arrow-button(button)
+        .login-card__entry
+          span.login-card__entry-text Нет аккаунта на Toxin?
+          +button-main-bordered({
+            text: 'создать',
+          })

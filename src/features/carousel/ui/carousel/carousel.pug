@@ -1,0 +1,23 @@
+mixin carousel(props={})
+  -
+    const {
+      isMainBackgound=false,
+      images=[],
+    }=props
+
+    const buttonsThemeClass = isMainBackgound && 'carousel_theme_main'
+    const classes = ['js-carousel', buttonsThemeClass]
+
+  .carousel(class=classes)
+    ul.carousel__slides.js-carousel__slides
+      each image in images
+        li.carousel__slide
+          a(class="carousel__link" href="./room-details-page.html")
+            img.carousel__img(
+              class="carousel__image"
+              src=require(`../../assets/images/${image}`)
+              alt="room photo"
+            )
+    ul.carousel__nav.js-carousel__nav
+      each image in images
+        li.carousel__nav-dot
