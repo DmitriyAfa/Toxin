@@ -4,12 +4,14 @@ mixin button-main-bordered(props={})
       text='click me',
       size='medium',
       hovered=false,
+      link='',
     } = props
 
   +button({
     variant: 'main-bordered',
     size: size,
     hovered: hovered,
+    link: link,
   })
     +text({
       h3: text,

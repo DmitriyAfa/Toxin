@@ -28,7 +28,7 @@ module.exports = {
   }),
 
   entry: {
-    index: './src/pages/ui-kit-cards/index.pug'
+    index: './src/pages/ui-kit-headers/index.pug'
   },
 
   plugins: buildPlugins(),

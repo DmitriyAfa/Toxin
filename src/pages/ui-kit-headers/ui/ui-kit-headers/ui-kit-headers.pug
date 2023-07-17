@@ -1,0 +1,87 @@
+extends @/shared/layouts/ui-kit-layout/ui-kit-layout
+include @/shared/ui/flex/index
+include @/shared/ui/form-wrapper/index
+include @/shared/ui/input/index
+include @/entities/dropdown/index
+include @/shared/ui/button/index
+include @/shared/ui/bullet/index
+include @/entities/bullet-list/index
+include @/shared/ui/checkbox/index
+include @/shared/ui/text/index
+include @/shared/ui/named-wrapper/index
+include @/features/amenities-dropdown/index
+include @/features/guests-dropdown/index
+include @/features/text-field/index
+include @/entities/checkbox-list/index
+include @/entities/radio-buttons/index
+include @/entities/toggles/index
+include @/features/date-dropdown/index
+include @/shared/ui/radio/index
+include @/shared/ui/toggle/index
+include @/shared/ui/like/index
+include @/shared/ui/rating/index
+include @/entities/like-buttons/index
+include @/features/range-slider/index
+include @/features/pagination/index
+include @/features/comment/index
+include @/shared/ui/avatar/index
+include @/widgets/header/index
+include @/features/navigation/index
+
+block variables
+  - const title = 'Form elements'
+
+block style
+  link(rel='stylesheet' href=require('@/app/styles/index.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/flex/flex.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/form-wrapper/form-wrapper.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/input/input.scss'))
+  link(rel='stylesheet' href=require('@/features/text-field/text-field.scss'))
+  link(rel='stylesheet' href=require('@/features/range-slider/range-slider.scss'))
+  link(rel='stylesheet' href=require('@/entities/checkbox-list/checkbox-list.scss'))
+  link(rel='stylesheet' href=require('@/features/date-dropdown/date-dropdown.scss'))
+  link(rel='stylesheet' href=require('@/entities/dropdown/dropdown.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/button/button.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/bullet/bullet.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/toggle/toggle.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/radio/radio.scss'))
+  link(rel='stylesheet' href=require('@/entities/bullet-list/bullet-list.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/named-wrapper/named-wrapper.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/text/text.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/checkbox/checkbox.scss'))
+  link(rel='stylesheet' href=require('air-datepicker/air-datepicker.css'))
+  link(rel='stylesheet' href=require('pagination-system/dist/pagination-system.min.css'))
+  link(rel='stylesheet' href=require('nouislider/dist/nouislider.css'))
+  link(rel='stylesheet' href=require('@/shared/ui/like/like.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/rating/rating.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/avatar/avatar.scss'))
+  link(rel='stylesheet' href=require('@/features/pagination/pagination.scss'))
+  link(rel='stylesheet' href=require('@/features/comment/comment.scss'))
+  link(rel='stylesheet' href=require('../../ui-kit-headers.scss'))
+  link(rel='stylesheet' href=require('@/widgets/header/header.scss'))
+  link(rel='stylesheet' href=require('@/features/navigation/navigation.scss'))
+
+block content
+  .ui-kit-headers
+    .ui-kit-headers__first-header
+      +header()
+    .ui-kit-headers__second-header
+      +header({
+        logged: true,
+        userName: 'Юлий Цезарь',
+      })
+
+
+
+block script
+  script(src=require("@/app/app"))
+  script(src=require("@/shared/ui/button/index.js"))
+  script(src=require("@/shared/ui/like/index.js"))
+  script(src=require("@/shared/ui/named-wrapper/index.js"))
+  script(src=require("@/entities/dropdown/dropdown"))
+  script(src=require("@/features/amenities-dropdown/amenities-dropdown"))
+  script(src=require("@/features/guests-dropdown/guests-dropdown"))
+  script(src=require("@/features/date-dropdown/date-dropdown"))
+  script(src=require("@/features/range-slider/index.js"))
+  script(src=require("@/features/pagination/index.js"))
+  script(src=require("@/features/navigation/index.js"))

@@ -1,0 +1,85 @@
+mixin navigation(props={})
+  -
+    const {
+      navigationList=[
+        {
+          text: 'О нас',
+          href: './error-page.html',
+          active: true,
+        },
+        {
+          text: 'Услуги',
+          href: './error-page.html',
+          active: false,
+          links: [
+            {
+              text: 'Услуга 1',
+              href: './error-page.html',
+            },
+            {
+              text: 'Услуга 2',
+              href: './error-page.html',
+            },
+            {
+              text: 'Услуга 3',
+              href: './error-page.html',
+            },
+          ],
+        },
+        {
+          text: 'Вакансии',
+          href: './error-page.html',
+          active: false,
+        },
+        {
+          text: 'Новости',
+          href: './error-page.html',
+          active: false,
+        },
+        {
+          text: 'Соглашения',
+          href: './error-page.html',
+          active: false,
+          links: [
+            {
+              text: 'Соглашение 1',
+              href: './error-page.html',
+            },
+            {
+              text: 'Соглашение 2',
+              href: './error-page.html',
+            },
+            {
+              text: 'Соглашение 3',
+              href: './error-page.html',
+            },
+          ],
+        },
+      ],
+    }=props
+
+    const navigationSubListClasses= ['navigation__sub-list_hide','js-navigation__sub-list']
+
+  nav.navigation
+    ul.navigation__list
+      each item in navigationList
+        -
+          const navigationLinkActiveClass = item.active && 'navigation__link_active'
+
+        li.navigation__item.js-navigation__item
+          a&attributes({
+            class: ["navigation__link", navigationLinkActiveClass,],
+            href: './error-page.html',
+            tabindex: "0",
+          }) #{item.text}
+          if item.links !== undefined
+            span.navigation__button.js-navigation__button
+              +smallest-button-expand()
+            ul.navigation__sub-list(class=navigationSubListClasses)
+              each link in item.links
+                li.navigation__sub-item
+                  a&attributes({
+                    class: ["navigation__sub-link",],
+                    href: link.href,
+                    tabindex: "0",
+                  }) #{link.text}
