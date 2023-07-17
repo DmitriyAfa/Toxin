@@ -29,8 +29,8 @@
   --primary-gradient-transparent-25: linear-gradient(180deg,
       rgba(#bc9cff, 0.25) 0%,
       rgba(#8ba4f9, 0.25) 100%);
-
   --second-gradient: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  --headerBoxShadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
   // forms
   --form-border-50: 1px solid var(--text-color-50);

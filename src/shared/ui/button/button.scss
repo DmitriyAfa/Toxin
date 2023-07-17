@@ -34,6 +34,13 @@
         display: inline-block;
       }
 
+      &_light {
+        &::after {
+          content: url(./assets/icons/expand_light.svg);
+          display: inline-block;
+        }
+      }
+
       &-up {
         &::after {
           transform: rotate(180deg);
@@ -159,4 +166,21 @@
     }
   }
 
+}
+
+a.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+
+  &_size {
+    &_medium {
+      width: 87px;
+    }
+
+    &_biggest {
+      width: 196px;
+    }
+  }
 }

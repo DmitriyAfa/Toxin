@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll('.js-button');
 const expandButtons = document.querySelectorAll('.' + buttonVariants.EXPAND);
 
 buttons.forEach((btn) => {
-  if (btn.dataset.name !== 'submit') {
+  if (btn.dataset.name !== 'submit' && btn.dataset.name !== 'link') {
     btn.addEventListener('click', preventDefaultButton)
   }
 })

@@ -4,14 +4,16 @@ mixin button-main(props={})
       text='click me',
       size='medium',
       hovered=false,
+      link='',
     } = props
 
   +button({
     variant: 'main',
-    size: 'medium',
+    size: size,
     hovered: hovered,
+    link: link,
     })
       +text({
-        h3: 'click me',
+        h3: text,
         color: 'white',
       })
