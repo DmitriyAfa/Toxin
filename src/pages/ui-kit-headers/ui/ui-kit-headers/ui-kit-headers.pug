@@ -26,6 +26,7 @@ include @/features/pagination/index
 include @/features/comment/index
 include @/shared/ui/avatar/index
 include @/widgets/header/index
+include @/widgets/footer/index
 include @/features/navigation/index
 
 block variables
@@ -59,17 +60,20 @@ block style
   link(rel='stylesheet' href=require('@/features/comment/comment.scss'))
   link(rel='stylesheet' href=require('../../ui-kit-headers.scss'))
   link(rel='stylesheet' href=require('@/widgets/header/header.scss'))
+  link(rel='stylesheet' href=require('@/widgets/footer/footer.scss'))
   link(rel='stylesheet' href=require('@/features/navigation/navigation.scss'))
 
 block content
   .ui-kit-headers
-    .ui-kit-headers__first-header
-      +header()
-    .ui-kit-headers__second-header
-      +header({
-        logged: true,
-        userName: 'Юлий Цезарь',
-      })
+    //- .ui-kit-headers__first-header
+    //-   +header()
+    //- .ui-kit-headers__second-header
+    //-   +header({
+    //-     logged: true,
+    //-     userName: 'Юлий Цезарь',
+    //-   })
+    .ui-kit-headers__first-footer
+      +footer()
 
 
 

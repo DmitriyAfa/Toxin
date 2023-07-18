@@ -1,0 +1,24 @@
+mixin links(props={})
+  -
+    const{
+      linksList=[
+        { name: "О нас", url: "./error-page.html" },
+        { name: "Новости", url: "./error-page.html" },
+        { name: "Служба поддержки", url: "./error-page.html" },
+        { name: "Услуги", url: "./error-page.html" },
+      ],
+      title='Навигация',
+    }=props
+
+  .footer__links
+    .footer__links-title
+      +text({
+        h3: title,
+      })
+    ul.footer__links-list
+      each linkItem in linksList
+        li.footer__links-item
+          a&attributes({
+            class: 'footer__links-link',
+            href: linkItem.url,
+          }) #{linkItem.name}
