@@ -1,0 +1,18 @@
+mixin mobile-footer(props={})
+  -
+    const {
+      copyright="Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
+      social=[
+        { title: "twitter", link: "https://twitter.com" },
+        { title: "facebook", link: "https://facebook.com" },
+        { title: "instagram", link: "https://instagram.com" },
+      ],
+    }=props
+
+  footer.mobile-footer
+    .mobile-footer__wrapper
+      .mobile-footer__logo
+        img.logo(src=require('../../assets/icons/logo.svg'))
+      .mobile-footer__copyright-text #{copyright}
+      .mobile-footer__social
+        +social(social)

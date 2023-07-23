@@ -12,9 +12,16 @@
     top: 252px;
   }
 
-  &__first-footer {
+  // &__first-footer {
+  //   position: absolute;
+  //   width: 100%;
+  //   top: 156px;
+  // }
+
+  &__second-footer {
     position: absolute;
     width: 100%;
-    top: 156px;
+    top: 637px;
+    left: 336px;
   }
 }
