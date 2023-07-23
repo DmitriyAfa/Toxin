@@ -1,0 +1,76 @@
+include ../links/links
+
+mixin footer(props={})
+  -
+    const {
+      text='',
+      footerNavigation=[            
+        {
+          title: "навигация", 
+          linksList: [
+            { name: "О нас", url: "./error-page.html" },
+            { name: "Новости", url: "./error-page.html" },
+            { name: "Служба поддержки", url: "./error-page.html" },
+            { name: "Услуги", url: "./error-page.html" },
+          ]
+        },
+        {
+          title: "О нас", 
+          linksList: [
+            { name: "О сервисе", url: "./error-page.html" },
+            { name: "Наша команда", url: "./error-page.html" },
+            { name: "Вакансии", url: "./error-page.html" },
+            { name: "Инвесторы", url: "./error-page.html" },
+          ]
+        },
+          {
+            title: "Служба поддержки", 
+            linksList: [
+              { name: "Соглашение", url: "./error-page.html" },
+              { name: "Сообщества", url: "./error-page.html" },
+              { name: "Связь с нами", url: "./error-page.html" },
+            ]
+        },
+      ],
+      subscribe={
+        title: "Подписка",
+        text: "Получайте специальные предложения и новости сервиса"
+        },
+      copyright="Copyright © 2018 Toxin отель. Все\u00A0права\u00A0защищены.",
+      social=[
+        { title: "twitter", link: "https://twitter.com" },
+        { title: "facebook", link: "https://facebook.com" },
+        { title: "instagram", link: "https://instagram.com" },
+      ],
+    }=props
+
+  footer.footer
+    .footer__container
+      .footer__wrapper
+        section.footer__about
+          .footer__logo
+            img.logo(src=require('../../assets/icons/logo.svg'))
+          p.footer__introduction #{'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'}
+        section.footer__more
+          each nav in footerNavigation
+            .footer__more-links
+              +links(nav)
+        .footer__subscribe
+          .subscribe
+            .subscribe-title
+              +text({ 
+                h3: subscribe.title,
+              })
+            p.subscribe-text #{subscribe.text}
+            form(class="subscribe-form" method=`${subscribe.formMethod}`, action=`${subscribe.formAction}`)
+              +text-field({
+                type: 'email',
+                variant: 'subscribtion',
+                withTitle: false,
+                size: 'medium',
+              })
+    .footer__bottom
+      .footer__bottom-container
+        p.footer__copyright-text #{copyright}
+        section.footer__social
+          +social(social)

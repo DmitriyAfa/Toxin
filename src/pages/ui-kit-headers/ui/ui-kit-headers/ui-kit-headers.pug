@@ -26,7 +26,10 @@ include @/features/pagination/index
 include @/features/comment/index
 include @/shared/ui/avatar/index
 include @/widgets/header/index
+include @/widgets/footer/index
 include @/features/navigation/index
+include @/widgets/mobile-footer/index
+include @/shared/ui/social/index
 
 block variables
   - const title = 'Form elements'
@@ -59,7 +62,10 @@ block style
   link(rel='stylesheet' href=require('@/features/comment/comment.scss'))
   link(rel='stylesheet' href=require('../../ui-kit-headers.scss'))
   link(rel='stylesheet' href=require('@/widgets/header/header.scss'))
+  link(rel='stylesheet' href=require('@/widgets/footer/footer.scss'))
   link(rel='stylesheet' href=require('@/features/navigation/navigation.scss'))
+  link(rel='stylesheet' href=require('@/widgets/mobile-footer/mobile-footer.scss'))
+  link(rel='stylesheet' href=require('@/shared/ui/social/social.scss'))
 
 block content
   .ui-kit-headers
@@ -70,6 +76,11 @@ block content
         logged: true,
         userName: 'Юлий Цезарь',
       })
+    .ui-kit-headers__first-footer
+      +footer()
+    .ui-kit-headers__second-footer
+      span.wrapper
+        +mobile-footer()
 
 
 

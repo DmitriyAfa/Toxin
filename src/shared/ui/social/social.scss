@@ -1,0 +1,19 @@
+.social {
+  &__link {
+    &:not(:first-child) {
+      margin-left: 22px;
+    }
+
+    &_twitter::before {
+      content: url('./assets/icons/twitter.svg');
+    }
+
+    &_facebook::before {
+      content: url('./assets/icons/facebook.svg');
+    }
+
+    &_instagram::before {
+      content: url('./assets/icons/instagram.svg');
+    }
+  }
+}

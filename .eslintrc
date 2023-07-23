@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "node": true
+  },
+  "extends": [
+    "airbnb/base",
+    "plugin:fsd/all"
+  ],
+  "plugins": [
+    "fsd",
+    "pug"
+  ],
+  "rules": {
+    "no-new": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    // не нашел подходящих правил для правила "fsd/no-function-declaration-in-event-listener" по ссылке с ошибкой https://github.com/fullstack-development/front-end-best-practices/blob/master/JS/goodPractice.md
+    "fsd/no-function-declaration-in-event-listener": "off",
+    "no-param-reassign": "off",
+    "no-mixed-operators": "off",
+    "no-use-before-define": "off",
+    "prefer-destructuring": "off",
+    "no-plusplus": "off"
+  }
+}

@@ -5,16 +5,31 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --mode=development",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "stylelint:scss": "stylelint \"src/**/*.scss\"",
+    "stylelint:scss:fix": "stylelint \"src/**/*.scss\" --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^6.8.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-fsd": "^1.0.1",
+    "eslint-plugin-pug": "^1.2.4",
     "pug-plugin": "^4.9.7",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
+    "stylelint-scss": "^3.20.1",
     "webpack": "^5.84.1",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"

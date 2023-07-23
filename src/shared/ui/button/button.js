@@ -1,29 +1,27 @@
-import { buttonVariants } from "./constants/buttonConstants";
+import buttonVariants from './constants/buttonConstants';
 
 const toggleExpandButtonByEvent = (e) => {
-  e.target.classList.toggle(buttonVariants.EXPAND_UP)
-}
+  e.target.classList.toggle(buttonVariants.EXPAND_UP);
+};
 const moveExpandButtonUp = (btn) => {
-  btn.classList.add(buttonVariants.EXPAND_UP)
-}
+  btn.classList.add(buttonVariants.EXPAND_UP);
+};
 const removeDisabledFromMinusBtn = (classList) => {
-  classList.remove('button_variant_math_disabled')
-}
+  classList.remove('button_variant_math_disabled');
+};
 const addDisabledFromMinusBtn = (classList) => {
-  classList.add('button_variant_math_disabled')
-}
+  classList.add('button_variant_math_disabled');
+};
 const removeBtnVisability = (classList) => {
-  classList.add('button_visability_hidden')
-}
+  classList.add('button_visability_hidden');
+};
 const addBtnVisability = (classList) => {
-  classList.remove('button_visability_hidden')
-}
-const isExpandButton = (classList) => {
-  return classList.contains(buttonVariants.EXPAND);
-}
+  classList.remove('button_visability_hidden');
+};
+const isExpandButton = (classList) => classList.contains(buttonVariants.EXPAND);
 const preventDefaultButton = (e) => {
   e.preventDefault();
-}
+};
 
 export {
   toggleExpandButtonByEvent,
@@ -35,4 +33,4 @@ export {
   removeBtnVisability,
   buttonVariants,
   preventDefaultButton,
-}
+};
