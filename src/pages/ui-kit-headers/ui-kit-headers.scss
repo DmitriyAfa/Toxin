@@ -1,4 +1,5 @@
 .ui-kit-headers {
+  background: var(--ui-kit-bg-color);
 
   &__first-header {
     position: absolute;
@@ -12,16 +13,24 @@
     top: 252px;
   }
 
-  // &__first-footer {
-  //   position: absolute;
-  //   width: 100%;
-  //   top: 156px;
-  // }
-
-  &__second-footer {
+  &__first-footer {
     position: absolute;
     width: 100%;
-    top: 637px;
-    left: 336px;
+    top: 361px;
+  }
+
+  &__second-footer {
+    background: var(--ui-kit-bg-color);
+    position: absolute;
+    width: 100%;
+    top: 804px;
+    height: 427px;
+
+    .wrapper {
+      position: absolute;
+      width: inherit;
+      left: 336px;
+      top: 38px;
+    }
   }
 }

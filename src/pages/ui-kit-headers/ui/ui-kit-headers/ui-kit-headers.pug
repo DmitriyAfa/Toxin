@@ -69,17 +69,18 @@ block style
 
 block content
   .ui-kit-headers
-    //- .ui-kit-headers__first-header
-    //-   +header()
-    //- .ui-kit-headers__second-header
-    //-   +header({
-    //-     logged: true,
-    //-     userName: 'Юлий Цезарь',
-    //-   })
-    //- .ui-kit-headers__first-footer
-    //-   +footer()
+    .ui-kit-headers__first-header
+      +header()
+    .ui-kit-headers__second-header
+      +header({
+        logged: true,
+        userName: 'Юлий Цезарь',
+      })
+    .ui-kit-headers__first-footer
+      +footer()
     .ui-kit-headers__second-footer
-      +mobile-footer()
+      span.wrapper
+        +mobile-footer()
 
 
 
