@@ -9,26 +9,26 @@ function makeCalendar(element) {
     buttons: [
       {
         content() {
-          return 'очистить'
+          return 'очистить';
         },
         async onClick(dp) {
-          await dp.clear()
-          dp.$el.value = ''
-        }
+          await dp.clear();
+          dp.$el.value = '';
+        },
       },
       {
-        content(dp) {
-          return 'применить'
+        content() {
+          return 'применить';
         },
-        onClick(dp) {
-        }
-      }
+        onClick() {
+        },
+      },
     ],
-  })
+  });
 }
 
 const calendar = document.querySelector('.js-calendar');
 
 if (calendar !== undefined) {
-  makeCalendar(calendar)
+  makeCalendar(calendar);
 }

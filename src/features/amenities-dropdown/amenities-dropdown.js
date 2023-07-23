@@ -1,17 +1,16 @@
-import { dropdowns, makeDropdownFunctional } from '@/entities/dropdown/dropdown';
-import { makeAmenitiesText } from './lib/makeAmenitiesText';
-
+import { dropdowns, createDropdownFunctional } from '@/entities/dropdown/dropdown';
+import createAmenitiesText from './lib/createAmenitiesText';
 
 if (dropdowns) {
-  const name = 'amenities'
+  const name = 'amenities';
 
   dropdowns.forEach((dropdown) => {
     if (dropdown.dataset.name === name) {
-      makeDropdownFunctional({
+      createDropdownFunctional({
         dropdown,
-        makeInputTextCallback: makeAmenitiesText,
-        name: name,
-      })
+        createInputTextCallback: createAmenitiesText,
+        name,
+      });
     }
-  })
+  });
 }

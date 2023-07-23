@@ -1,8 +1,8 @@
-import { toggleNamedWrapperContent } from "./named-wrapper"
+import toggleNamedWrapperContent from './named-wrapper';
 
-let namedWrappers = document.querySelectorAll('.js-named-wrapper')
+const namedWrappers = document.querySelectorAll('.js-named-wrapper');
 if (namedWrappers.length > 0) {
   namedWrappers.forEach((namedWrapper) => {
-    toggleNamedWrapperContent(namedWrapper)
-  })
+    toggleNamedWrapperContent(namedWrapper);
+  });
 }

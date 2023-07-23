@@ -1,9 +1,9 @@
-import { makeCarousel } from "./carousel"
+import createCarousel from './carousel';
 
-const carousels = document.querySelectorAll('.js-carousel')
+const carousels = document.querySelectorAll('.js-carousel');
 
 if (carousels.length > 0) {
   carousels.forEach((carousel) => {
-    makeCarousel(carousel)
-  })
+    createCarousel(carousel);
+  });
 }

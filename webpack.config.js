@@ -28,7 +28,7 @@ module.exports = {
   }),
 
   entry: {
-    index: './src/pages/ui-kit-headers/index.pug'
+    index: './src/pages/ui-kit-forms/index.pug'
   },
 
   plugins: buildPlugins(),
